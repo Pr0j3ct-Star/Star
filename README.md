@@ -1,9 +1,4 @@
-[![Header image](https://pr0j3ct-ch4os.netlify.app/silly.png)](https://pr0j3ct-ch4os.github.io/)
-
-
-
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/frH2pb?referralCode=-F-OoX)
-
 
 
 

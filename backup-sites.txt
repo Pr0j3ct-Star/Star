@@ -3,7 +3,6 @@ Current Backups (as of december 15th 2023)
 koyeb broken :(
 https://pr0j3ct-ch4os.netlify.app
 https://pr0j3ct-ch4os-production.up.railway.app
-https://pr0j3ct-ch4os.vercel.app
 https://1-pr0j3ct-ch4os.vercel.app
 https://2-pr0j3ct-ch4os.vercel.app
 https://3-pr0j3ct-ch4os.vercel.app
