@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="styles.css">
+<html>
+<head>
+    
+</head>
+<body>
+    <a href=index2.html class="button">Return</a>
+    <button class="button" onclick="openGame()">Open Five Night's at Freddys </button>
+    <script>
+function openGame() {
+var win = window.open()
+var url = "https://thericepot.github.io/FNAF2"
+var iframe = win.document.createElement('iframe')
+iframe.style.width = "100%";
+iframe.style.height = "100%";
+iframe.style.border = "none";
+iframe.src = url
+win.document.body.appendChild(iframe)
+}
+    </script>
+</body>
+</html>
