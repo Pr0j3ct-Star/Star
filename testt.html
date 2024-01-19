@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link id="favicon" rel="icon" href="https://i.scdn.co/image/ab67616d00001e02b8b42a17e0e8779dcb3773ce" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <div class="container">
+    <h1>test login 1 [multiple user] </h1>
+    <div class="boxes">
+      <div class="box">
+        <h2>Login</h2>
+        <p>Please Login</p>
+        <input type="text" id="username-input" class="dark-mode-textbox" placeholder="Enter your user.">
+        <input type="password" id="password-input" class="dark-mode-textbox" placeholder="Enter your password.">
+        <button onclick="authenticate()" class="button">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Array of user credentials
+    var users = [
+      { username: 'ricepot', password: '051311a.22' },
+      { username: 'ryan', password: 'tennis' },
+      { username: 'ashton', password: 'dumbshit' },
+      { username: 'shannon', password: 'stevenson' },
+      { username: 'marck', password: 'ortiz' },
+      { username: 'william', password: 'appleton' },
+      { username: 'daniel', password: 'floor' },
+      // Add more users as needed
+    ];
+
+    function authenticate() {
+      var username = document.getElementById('username-input').value;
+      var password = document.getElementById('password-input').value;
+
+      // Check if entered credentials match any user
+      var validUser = users.find(user => user.username === username && user.password === password);
+
+      if (validUser) {
+        // Redirect to the secret site (replace with your actual secret site URL)
+        window.location.href = '1.html';
+      } else {
+        alert('Invalid username or password. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>
