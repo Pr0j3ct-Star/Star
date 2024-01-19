@@ -22,15 +22,18 @@
     <a href="2.html" class="button">Page 2 -----> </a>
     <h1 class="title">Project Chaos V2 Site</h1>
     <p>The Ultimate Game Website.</p>
+    
+    <!-- Sign-out button directly in the container -->
+    <div class="box" id="signOutBox" style="display: none;">
+      <h2>Logged In</h2>
+      <button onclick="signOut()" class="button">Sign Out</button>
+    </div>
+    
     <div class="boxes">
       <div class="box" id="loginBox">
         <h2>Current Backups</h2>
         <p>Here are the current backups right now. If None work, use a proxy (download the list in 2nd page).</p>
         <a href="backup-sites.html" class="button">backups</a>
-      </div>
-      <div class="box" id="signOutBox" style="display: none;">
-        <h2>Logged In</h2>
-        <button onclick="signOut()" class="button">Sign Out</button>
       </div>
       <div class="box">
         <h2>GBA EMU</h2>
@@ -59,7 +62,7 @@
             <td>2.1.2</td>
             <td>
               <ul>
-                <li><span class="green-text">[-] </span>Lockdown to avoid Cease and Desist, and Ace. [you know him if u go to my school] </li>
+                <li><span class="red-text">[-] </span>Lockdown to avoid Cease and Desist, and Ace. [you know him if u go to my school] </li>
               </ul>
             </td>
           </tr>
