@@ -15,7 +15,7 @@
       
       if (username) {
         // User is signed in, redirect to another page
-        window.location.href = 'main.html'; // Replace with the page you want to redirect to
+        window.location.href = '1.html'; // Replace with the page you want to redirect to
       }
     }
 
@@ -51,7 +51,7 @@
       { username: 'ryan', password: 'tennis' },
       { username: 'ashton', password: 'loanDepot-123' },
       { username: 'shannon', password: 'stevenson' },
-      { username: 'marck', password: '' },
+      { username: 'marck', password: 's' },
       { username: 'william', password: 'appleton' },
       { username: 'daniel', password: 'floor' },
       { username: 'mason', password: 'redshirtredhood' },
@@ -65,4 +65,21 @@
 
       if (validUser) {
         // Set a cookie or token to indicate the user is signed in
-        document.cookie = 'username=' + username + '; pa
+        document.cookie = 'username=' + username + '; path=/'; // Replace with your authentication mechanism
+
+        // Play the correct password sound
+        var correctAudio = document.getElementById('correctPasswordAudio');
+        correctAudio.play();
+
+        window.location.href = '1.html';
+      } else {
+        // Play the incorrect password sound
+        var incorrectAudio = document.getElementById('incorrectPasswordAudio');
+        incorrectAudio.play();
+
+        alert('Invalid username or password. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>
