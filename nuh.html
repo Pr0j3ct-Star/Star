@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link id="favicon" rel="icon" href="https://pr0j3ct-ch4os.github.io/favicon.ico" type="image/x-icon">
+  <link id="favicon" rel="icon" href="https://i.scdn.co/image/ab67616d00001e02b8b42a17e0e8779dcb3773ce" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Project Chaos V2 Site</title>
-  <!-- Add audio elements for incorrect and correct password sounds -->
-  <audio id="incorrectPasswordAudio" src="password.mp3" preload="auto"></audio>
-  <audio id="correctPasswordAudio" src="brain.mp3" preload="auto"></audio>
+  
 </head>
 <body>
-  <script>
-    // Array of user credentials
-    var users = [
-      { username: 'user1', password: 'pass1' },
-      { username: 'user2', password: 'pass2' },
-      // Add more users as needed
-    ];
-
-    function authenticate() {
-      var username = document.getElementById('username-input').value;
-      var password = document.getElementById('password-input').value;
-
-      // Check if entered credentials match any user
-      var validUser = users.find(user => user.username === username && user.password === password);
-
-      if (validUser) {
-        // Set a cookie with the username
-        document.cookie = 'username=' + username + '; expires=' + new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
-
-        // Play the correct password sound
-        var correctAudio = document.getElementById('correctPasswordAudio');
-        correctAudio.play();
-
-        // Redirect to the main page (replace with your actual main page URL)
-        window.location.href = '1.html';
-      } else {
-        // Play the incorrect password sound
-        var incorrectAudio = document.getElementById('incorrectPasswordAudio');
-        incorrectAudio.play();
-
-        // Display an alert
-        alert('Incorrect username or password. Please try again.');
-      }
-    }
-  </script>
-
   <div class="container">
+    <h1>Pr0j3ct-Ch4os has been closed temporarily and made private until further notice.</h1>
+    <p>To avoid a cease and desist lololololololol</p>
     <div class="boxes">
       <div class="box">
         <h2>Login</h2>
-        <p>Please Login</p>
+        <p>Only Certain People I trust have a User and Password.</p>
         <input type="text" id="username-input" class="dark-mode-textbox" placeholder="Enter your user.">
         <input type="password" id="password-input" class="dark-mode-textbox" placeholder="Enter your password.">
         <button onclick="authenticate()" class="button">Login</button>
       </div>
     </div>
   </div>
+
+  <audio id="incorrectPasswordAudio" src="password.mp3" preload="auto"></audio>
+  <audio id="correctPasswordAudio" src="brain.mp3" preload="auto"></audio>
+
+  <script>
+    var users = [
+      { username: 'ricepot', password: '051311a.22' },
+      { username: 'ryan', password: 'tennis' },
+      { username: 'ashton', password: 'loanDepot-123' },
+      { username: 'shannon', password: 'stevenson' },
+      { username: 'marck', password: 'dumbshit' },
+      { username: 'william', password: 'appleton' },
+      { username: 'daniel', password: 'floor' },
+      { username: 'mason', password: 'redshirtredhood' },
+    ];
+
+    function authenticate() {
+      var username = document.getElementById('username-input').value;
+      var password = document.getElementById('password-input').value;
+
+      var validUser = users.find(user => user.username === username && user.password === password);
+
+      if (validUser) {
+        // Play the correct password sound
+        var correctAudio = document.getElementById('correctPasswordAudio');
+        correctAudio.play();
+
+        window.location.href = '1.html';
+      } else {
+        // Play the incorrect password sound
+        var incorrectAudio = document.getElementById('incorrectPasswordAudio');
+        incorrectAudio.play();
+
+        alert('Invalid username or password. Please try again.');
+      }
+    }
+  </script>
 </body>
 </html>
