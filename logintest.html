@@ -5,11 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  
 </head>
 <body>
   <div class="container">
-    <h1>test login with multiple users</h1>
     <div class="boxes">
       <div class="box">
         <h2>Login</h2>
@@ -24,13 +22,8 @@
   <script>
     // Array of user credentials
     var users = [
-      { username: 'ricepot', password: '051311a.22' },
-      { username: 'ryan', password: 'tennis' },
-      { username: 'ashton', password: 'dumbshit' },
-      { username: 'shannon', password: 'stevenson' },
-      { username: 'marck', password: 'ortiz' },
-      { username: 'william', password: 'appleton' },
-      { username: 'daniel', password: 'floor' },
+      { username: 'user1', password: 'pass1' },
+      { username: 'user2', password: 'pass2' },
       // Add more users as needed
     ];
 
@@ -42,12 +35,28 @@
       var validUser = users.find(user => user.username === username && user.password === password);
 
       if (validUser) {
-        // Redirect to the secret site (replace with your actual secret site URL)
-        window.location.href = '1.html';
+        // Set a cookie with the username
+        document.cookie = 'username=' + username + '; expires=' + new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
+
+        // Redirect to the main page (replace with your actual main page URL)
+        window.location.href = '5.html';
       } else {
         alert('Invalid username or password. Please try again.');
       }
     }
+
+    // Check if user is logged in (called on page load)
+    function checkLoggedIn() {
+      var isLoggedIn = document.cookie.includes('username=');
+
+      if (!isLoggedIn) {
+        // Redirect to the login page or display a message
+        window.location.href = 'logintest.html';
+      }
+    }
+
+    // Call the checkLoggedIn function on page load
+    checkLoggedIn();
   </script>
 </body>
 </html>
