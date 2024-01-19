@@ -8,19 +8,19 @@
   <title>Project Chaos V2 Site</title>
 </head>
 <body>
-  <script>
-    // Retrieve username from session storage
-    var storedUsername = sessionStorage.getItem('username');
-
-    // Display personalized welcome message on the main page
-    if (storedUsername) {
-      document.write('<p>Welcome, ' + storedUsername + '!</p>');
-    }
-  </script>
-
   <div class="container">
     <a href="2.html" class="button">Page 2 -----> </a>
     <h1 class="title">Project Chaos V2 Site</h1>
+
+    <script>
+      // Retrieve username from session storage
+      var storedUsername = sessionStorage.getItem('username');
+
+      // Display personalized welcome message on the main page
+      if (storedUsername) {
+        document.write('<p>Welcome, ' + storedUsername + '!</p>');
+      }
+    </script>
 
     <div class="boxes">
       <div class="box">
@@ -63,6 +63,4 @@
         </table>
       </div>
     </div>
-  </div>
-</body>
-</html>
+  
