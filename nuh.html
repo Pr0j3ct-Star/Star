@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Project Chaos V2 Site</title>
-  <!-- Add an audio element for incorrect password sound -->
+  <!-- Add audio elements for incorrect and correct password sounds -->
   <audio id="incorrectPasswordAudio" src="password.mp3" preload="auto"></audio>
+  <audio id="correctPasswordAudio" src="brain.mp3" preload="auto"></audio>
 </head>
 <body>
   <script>
@@ -29,12 +30,16 @@
         // Set a cookie with the username
         document.cookie = 'username=' + username + '; expires=' + new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
 
+        // Play the correct password sound
+        var correctAudio = document.getElementById('correctPasswordAudio');
+        correctAudio.play();
+
         // Redirect to the main page (replace with your actual main page URL)
         window.location.href = '1.html';
       } else {
         // Play the incorrect password sound
-        var audio = document.getElementById('incorrectPasswordAudio');
-        audio.play();
+        var incorrectAudio = document.getElementById('incorrectPasswordAudio');
+        incorrectAudio.play();
 
         // Display an alert
         alert('Incorrect username or password. Please try again.');
