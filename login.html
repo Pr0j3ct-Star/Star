@@ -23,7 +23,7 @@
   </div>
 
   <script>
-    // Array of user credentials
+    
     var users = [
       { username: 'ricepot', password: '051311a.22' },
       { username: 'ryan', password: 'tennis' },
@@ -33,18 +33,18 @@
       { username: 'william', password: 'appleton' },
       { username: 'daniel', password: 'floor' },
       { username: 'mason', password: 'redshirtredhood' },
-      // Add more users as needed
+      
     ];
 
     function authenticate() {
       var username = document.getElementById('username-input').value;
       var password = document.getElementById('password-input').value;
 
-      // Check if entered credentials match any user
+      
       var validUser = users.find(user => user.username === username && user.password === password);
 
       if (validUser) {
-        // Redirect to the secret site (replace with your actual secret site URL)
+        
         window.location.href = '1.html';
       } else {
         alert('Invalid username or password. Please try again.');
