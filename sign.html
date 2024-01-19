@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link id="favicon" rel="icon" href="https://pr0j3ct-ch4os.github.io/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Project Chaos V2 Site</title>
+</head>
+<body>
+  <script>
+    function signOut() {
+      // Remove the stored username cookie
+      document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      
+      // Redirect to the login page (replace with your actual login page URL)
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <div class="container">
+    <a href="2.html" class="button">Page 2 -----> </a>
+    <h1 class="title">Project Chaos V2 Site</h1>
+    <p>The Ultimate Game Website.</p>
+    <div class="boxes">
+      <div class="box" id="loginBox">
+        <h2>Current Backups</h2>
+        <p>Here are the current backups right now. If None work, use a proxy (download the list in 2nd page).</p>
+        <a href="backup-sites.html" class="button">backups</a>
+      </div>
+      <div class="box" id="signOutBox" style="display: none;">
+        <h2>Logged In</h2>
+        <button onclick="signOut()" class="button">Sign Out</button>
+      </div>
+      <div class="box">
+        <h2>GBA EMU</h2>
+        <p>Use the Gameboy Advance emulator.</p>
+        <a href="https://pr0j3ct-ch4os.github.io/core_chaos" class="button">GBA EMU</a>
+      </div>
+      <div class="box">
+        <h2>Eaglercraft</h2>
+        <p>Eaglercraft (Minecraft but silly)</p>
+        <div>
+          <a href="https://minecraft-project-chaos.vercel.app/" class="button">Eaglercraft </a>
+        </div>
+      </div>
+    </div>
+    <div class="patch-notes">
+      <h2>Patch Notes</h2>
+      <div class="patch-table">
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Current Version</th>
+            <th>Changes</th>
+          </tr>
+          <tr>
+            <td>January 18</td>
+            <td>2.1.2</td>
+            <td>
+              <ul>
+                <li><span class="green-text">[-] </span>Lockdown to avoid Cease and Desist, and Ace. [you know him if u go to my school] </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
