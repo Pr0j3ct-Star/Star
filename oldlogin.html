@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link id="favicon" rel="icon" href="https://i.scdn.co/image/ab67616d00001e02b8b42a17e0e8779dcb3773ce" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Pr0j3ct-Ch4os has been closed temporally and made private until further notice.</h1>
+    <p>to avoid a cease and desist lololololololol</p>
+    <div class="boxes">
+      <div class="box">
+        <h2>Login</h2>
+        <p>Only Certain People i trust have a User and Password.</p>
+        <input type="text" id="username-input" class="dark-mode-textbox" placeholder="Enter your user.">
+        <input type="password" id="password-input" class="dark-mode-textbox" placeholder="Enter your password.">
+        <button onclick="authenticate()" class="button">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    
+    var users = [
+      { username: 'ricepot', password: '051311a.22' },
+      { username: 'ryan', password: 'tennis' },
+      { username: 'ashton', password: 'loanDepot-123' },
+      { username: 'shannon', password: 'stevenson' },
+      { username: 'marck', password: 'dumbshit' },
+      { username: 'william', password: 'appleton' },
+      { username: 'daniel', password: 'floor' },
+      { username: 'mason', password: 'redshirtredhood' },
+      
+    ];
+
+    function authenticate() {
+      var username = document.getElementById('username-input').value;
+      var password = document.getElementById('password-input').value;
+
+      
+      var validUser = users.find(user => user.username === username && user.password === password);
+
+      if (validUser) {
+        
+        window.location.href = '1.html';
+      } else {
+        alert('Invalid username or password. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>

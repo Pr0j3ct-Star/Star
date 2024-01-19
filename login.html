@@ -9,12 +9,12 @@
 </head>
 <body>
   <div class="container">
-    <h1>Pr0j3ct-Ch4os has been closed temporally and made private until further notice.</h1>
-    <p>to avoid a cease and desist lololololololol</p>
+    <h1>Pr0j3ct-Ch4os has been closed temporarily and made private until further notice.</h1>
+    <p>To avoid a cease and desist lololololololol</p>
     <div class="boxes">
       <div class="box">
         <h2>Login</h2>
-        <p>Only Certain People i trust have a User and Password.</p>
+        <p>Only Certain People I trust have a User and Password.</p>
         <input type="text" id="username-input" class="dark-mode-textbox" placeholder="Enter your user.">
         <input type="password" id="password-input" class="dark-mode-textbox" placeholder="Enter your password.">
         <button onclick="authenticate()" class="button">Login</button>
@@ -22,8 +22,10 @@
     </div>
   </div>
 
+  <audio id="incorrectPasswordAudio" src="password.mp3" preload="auto"></audio>
+  <audio id="correctPasswordAudio" src="brain.mp3" preload="auto"></audio>
+
   <script>
-    
     var users = [
       { username: 'ricepot', password: '051311a.22' },
       { username: 'ryan', password: 'tennis' },
@@ -33,20 +35,25 @@
       { username: 'william', password: 'appleton' },
       { username: 'daniel', password: 'floor' },
       { username: 'mason', password: 'redshirtredhood' },
-      
     ];
 
     function authenticate() {
       var username = document.getElementById('username-input').value;
       var password = document.getElementById('password-input').value;
 
-      
       var validUser = users.find(user => user.username === username && user.password === password);
 
       if (validUser) {
-        
+        // Play the correct password sound
+        var correctAudio = document.getElementById('correctPasswordAudio');
+        correctAudio.play();
+
         window.location.href = '1.html';
       } else {
+        // Play the incorrect password sound
+        var incorrectAudio = document.getElementById('incorrectPasswordAudio');
+        incorrectAudio.play();
+
         alert('Invalid username or password. Please try again.');
       }
     }
