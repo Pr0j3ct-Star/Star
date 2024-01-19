@@ -24,7 +24,7 @@
             iframe.onload = function() {
                 // Check if the content is blocked
                 if (iframe.contentDocument && iframe.contentDocument.body.innerHTML.includes("BLOCKED_BY_CLIENT")) {
-                    alert("Page Closed, Thank you for using Project Chaos!");
+                    alert("ERROR 301, BLOCKED BY CLIENT.");
                     win.close(); // Close the window if blocked
                 }
             };
