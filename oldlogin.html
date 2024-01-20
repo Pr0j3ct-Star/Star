@@ -5,16 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  
+  <title>Log on into Project Chaos</title>
 </head>
 <body>
   <div class="container">
-    <h1>Pr0j3ct-Ch4os has been closed temporally and made private until further notice.</h1>
-    <p>to avoid a cease and desist lololololololol</p>
+    <h1>Pr0j3ct-Ch4os has been closed temporarily and made private until further notice.</h1>
     <div class="boxes">
       <div class="box">
         <h2>Login</h2>
-        <p>Only Certain People i trust have a User and Password.</p>
+        <p>Please Wait until lockdown is finished.</p>
         <input type="text" id="username-input" class="dark-mode-textbox" placeholder="Enter your user.">
         <input type="password" id="password-input" class="dark-mode-textbox" placeholder="Enter your password.">
         <button onclick="authenticate()" class="button">Login</button>
@@ -22,32 +21,41 @@
     </div>
   </div>
 
+  <audio id="incorrectPasswordAudio" src="password.mp3" preload="auto"></audio>
+  <audio id="correctPasswordAudio" src="brain.mp3" preload="auto"></audio>
+
   <script>
-    
     var users = [
-      { username: 'ricepot', password: '051311a.22' },
-      { username: 'ryan', password: 'tennis' },
-      { username: 'ashton', password: 'loanDepot-123' },
-      { username: 'shannon', password: 'stevenson' },
-      { username: 'marck', password: 'dumbshit' },
-      { username: 'william', password: 'appleton' },
-      { username: 'daniel', password: 'floor' },
-      { username: 'mason', password: 'redshirtredhood' },
-      
+      { username: 'ricepot', password: '051311a.22', redirect: '1.html' },
+      { username: 'ryan', password: '69696969', redirect: '1.html' },
+      { username: 'ashton', password: 'chaos', redirect: '1.html' },
+      { username: 'shannon', password: 'stevenson', redirect: '1.html' },
+      { username: 'marck', password: 'ortiz', redirect: '1.html' },
+      { username: 'william', password: 'appleton', redirect: '1.html' },
+      { username: 'i_eat_off_the_floor', password: 'floor', redirect: '1.html' },
+      { username: 'mason', password: 'redshirtredhood', redirect: '1.html' },
+      { username: 'demetrious', password: 'deeznuts', redirect: '1.html' },
+      { username: 'ace', password: 'ace', redirect: 'banned.html' }, // New user
     ];
 
     function authenticate() {
       var username = document.getElementById('username-input').value;
       var password = document.getElementById('password-input').value;
 
-      
       var validUser = users.find(user => user.username === username && user.password === password);
 
       if (validUser) {
-        
-        window.location.href = '1.html';
+        // Play the correct password sound
+        var correctAudio = document.getElementById('correctPasswordAudio');
+        correctAudio.play();
+
+        window.location.href = validUser.redirect;
       } else {
-        alert('Invalid username or password. Please try again.');
+        // Play the incorrect password sound
+        var incorrectAudio = document.getElementById('incorrectPasswordAudio');
+        incorrectAudio.play();
+
+        alert('Invalid user or password, try again!');
       }
     }
   </script>
