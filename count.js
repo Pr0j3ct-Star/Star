@@ -1,5 +1,5 @@
 // Set the date you want to countdown to in MM/DD/YYYY format
-const countDownDate = new Date("01/31/2024 00:00:00").getTime();
+const countDownDate = new Date("01/20/2024 9:40:00").getTime();
 
 // Set the reason code (1 for "abuse of platform", 2 for "toxicity")
 const reasonCode = 1; // Change this to the desired reason code
