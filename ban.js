@@ -31,11 +31,11 @@ const x = setInterval(function() {
     const reason = getReason(reasonCode);
 
     // Display the result with additional text
-    document.getElementById("countdown").innerHTML = `Reason for ban: ${reason} | Days remaining until release: ${days}`;
+    document.getElementById("countdown").innerHTML = `Reason for ban: ${reason} | Days remaining until unban: ${days}`;
 
     // If the countdown is over, display a message
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("countdown").innerHTML = `The wait is over! (${reason})`;
+        document.getElementById("countdown").innerHTML = `Please Wait until unban. (${reason})`;
     }
 }, 1000);
