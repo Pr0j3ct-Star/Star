@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Log on into Project Chaos</title>
-  
 </head>
 <body>
   <div class="container">
@@ -27,15 +26,16 @@
 
   <script>
     var users = [
-      { username: 'ricepot', password: '051311a.22' },
-      { username: 'ryan', password: '69696969' },
-      { username: 'ashton', password: 'chaos' },
-      { username: 'shannon', password: 'stevenson' },
-      { username: 'marck', password: 'ortiz' },
-      { username: 'william', password: 'appleton' },
-      { username: 'i_eat_off_the_floor', password: 'floor' },
-      { username: 'mason', password: 'redshirtredhood' },
-      { username: 'demetrious', password: 'deeznuts' },
+      { username: 'ricepot', password: '051311a.22', redirect: '1.html' },
+      { username: 'ryan', password: '69696969', redirect: '1.html' },
+      { username: 'ashton', password: 'chaos', redirect: '1.html' },
+      { username: 'shannon', password: 'stevenson', redirect: '1.html' },
+      { username: 'marck', password: 'ortiz', redirect: '1.html' },
+      { username: 'william', password: 'appleton', redirect: '1.html' },
+      { username: 'i_eat_off_the_floor', password: 'floor', redirect: '1.html' },
+      { username: 'mason', password: 'redshirtredhood', redirect: '1.html' },
+      { username: 'demetrious', password: 'deeznuts', redirect: '1.html' },
+      { username: 'ace', password: 'ace', redirect: 'banned.html' }, // New user
     ];
 
     function authenticate() {
@@ -49,13 +49,13 @@
         var correctAudio = document.getElementById('correctPasswordAudio');
         correctAudio.play();
 
-        window.location.href = '1.html';
+        window.location.href = validUser.redirect;
       } else {
         // Play the incorrect password sound
         var incorrectAudio = document.getElementById('incorrectPasswordAudio');
         incorrectAudio.play();
 
-        alert('Invalid user or password dumbass, try again!!!!!!');
+        alert('Invalid user or password, try again!');
       }
     }
   </script>
