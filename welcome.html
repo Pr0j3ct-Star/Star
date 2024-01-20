@@ -15,7 +15,7 @@
     <div class="boxes">
       <div class="box">
         <h2>Current Backups</h2>
-        <p>Here are the current backups right now. If None work, use a proxy. (download the list in 2nd page)</p>
+        <p>Here are the current backups right now. If None work, use a proxy. (download the list in 2nd page) </p>
         <a href="backup-sites.html" class="button">backups</a>
       </div>
       <div class="box">
@@ -29,7 +29,6 @@
         <div>
           <a href="https://minecraft-project-chaos.vercel.app/" class="button">Eaglercraft </a>
         </div>
-        
       </div>
     </div>
     <div class="patch-notes">
@@ -48,7 +47,6 @@
               <ul>
                 <li><span class="green-text">[-] </span>Lockdown to avoid Cease and Desist, and Ace. [you know him if u go to my school] </li>
               </ul>
-              
             </td>
           </tr>
         </table>
@@ -57,18 +55,16 @@
   </div>
 
   <audio id="pageLoadAudio" src="welcom.mp3" preload="auto"></audio>
-  
+
   <script>
-    // Function to play the sound on page load
-    function playPageLoadSound() {
-      var sound = new Audio('your_sound.mp3'); // Replace 'your_sound.mp3' with the actual path to your sound file
+    // Function to play the sound immediately
+    function playInstantSound() {
+      var sound = new Audio('welcom.mp3'); // Replace 'your_sound.mp3' with the actual path to your sound file
       sound.play();
     }
 
-    // Event listener for the 'load' event
-    window.addEventListener('load', function() {
-      playPageLoadSound(); // Call the function to play the sound
-    });
+    // Call the function as soon as the script is executed
+    playInstantSound();
   </script>
 </body>
 </html>
