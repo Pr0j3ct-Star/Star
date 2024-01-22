@@ -1,14 +1,14 @@
 // Set the date you want to countdown to in MM/DD/YYYY format
-const countDownDate = new Date("01/31/2024 9:40:00").getTime();
+const countDownDate = new Date("01/28/2024 9:40:00").getTime();
 
 // Set the reason code (1 for "abuse of platform", 2 for "toxicity")
-const reasonCode = 1; // Change this to the desired reason code
+const reasonCode = 2; // Change this to the desired reason code
 
 // Function to get the reason based on the code
 function getReason(code) {
     switch (code) {
         case 1:
-            return "Getting my ass cleaning like my mother";
+            return "idk what you did but yo ass banned";
         case 2:
             return "Reporting Website to teachers/staff.";
         default:
