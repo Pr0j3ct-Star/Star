@@ -13,7 +13,7 @@ html {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: #000000;
+  background-image: url('bliss.jpg');
   color: #ffffff;
   display: flex;
   justify-content: center;
