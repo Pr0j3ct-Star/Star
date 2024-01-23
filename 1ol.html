@@ -12,10 +12,6 @@
     <a href=2.html class="button">Page 2 -----> </a>
     <h1 class="title">Project Chaos V2 Site</h1>
     <p>The Ultimate Game Website.</p>
-
-    <!-- Move the fact-container here -->
-    <div id="fact-container"></div>
-
     <div class="boxes">
       <div class="box">
         <h2>Current Backups</h2>
@@ -45,44 +41,30 @@
             <th>Changes</th>
           </tr>
           <tr>
-            <td>January 23</td>
+            <td>January 20</td>
             <td>2.1.4</td>
             <td>
               <ul>
-                <li><span class="green-text">[+] </span>New Fun Fact System + New button in page 4</li>
+                <li><span class="green-text">[+] </span>New Button at Page 4, No youtube fix yet :_( </li>
               </ul>
             </td>
           </tr>
         </table>
       </div>
     </div>
-
-    <audio id="pageLoadAudio" src="welcom.mp3" preload="auto"></audio>
-
-    <script>
-      const funFacts = [
-        "Fun Fact:50% of this website was coded with ChatGPT,because im stupid",
-        "Fun Fact: The Creator is very stinky!!1",
-        "Fun Fact:This website is hosted using vercel cuz its faster at updating ",
-        "Fun Fact: Apparently the website is about 276 KB. Mainly Because it just redirects to another website, the emulator is about 576MB",
-        "I commited multiple crimes in a gated community :)"
-      ];
-
-      function generateFact() {
-        const factContainer = document.getElementById("fact-container");
-        const randomIndex = Math.floor(Math.random() * funFacts.length);
-        const randomFact = funFacts[randomIndex];
-
-        factContainer.innerHTML = `<p>${randomFact}</p>`;
-      }
-
-      function updateFunFactAutomatically() {
-        generateFact(); // Initial fact
-        setInterval(generateFact, 10000); // Change the interval (in milliseconds) as needed
-      }
-
-      updateFunFactAutomatically();
-    </script>
   </div>
+
+  <audio id="pageLoadAudio" src="welcom.mp3" preload="auto"></audio>
+
+  <script>
+    // Function to play the sound immediately
+    function playInstantSound() {
+      var sound = new Audio('welcom.mp3'); // Replace 'your_sound.mp3' with the actual path to your sound file
+      sound.play();
+    }
+
+    // Call the function as soon as the script is executed
+    playInstantSound();
+  </script>
 </body>
 </html>
