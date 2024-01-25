@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link id="favicon" rel="icon" href="https://pr0j3ct-ch4os.github.io/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Project Chaos V2 Site</title>
+  <title>Custom Title</title> <!-- Change this to your default title -->
+  <link id="favicon" rel="icon" href="https://pr0j3ct-ch4os.github.io/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <div class="container">
-    <a href=2.html class="button">Page 2 -----> </a>
+    <a href="2.html" class="button">Page 2 -----> </a>
     <h1 class="title">Project Chaos V2 Site</h1>
     <p>The Ultimate Game Website.</p>
+    
+    <!-- Move the fact-container here -->
+    <div id="fact-container"></div>
+
     <div class="boxes">
       <div class="box">
         <h2>Current Backups</h2>
@@ -41,30 +45,68 @@
             <th>Changes</th>
           </tr>
           <tr>
-            <td>January 20</td>
-            <td>2.1.4</td>
+            <td>January 24</td>
+            <td>2.1.5</td>
             <td>
               <ul>
-                <li><span class="green-text">[+] </span>New Button at Page 4, No youtube fix yet :_( </li>
+                <li><span class="green-text">[+] </span>YOUTUBE FIXED!!!!11</li>
               </ul>
             </td>
           </tr>
         </table>
       </div>
     </div>
+
+    <audio id="pageLoadAudio" src="welcom.mp3" preload="auto"></audio>
+
+    <script>
+      const funFacts = [
+  "Fun Fact: 50% of this website was coded with ChatGPT, because I'm stupid",
+  "Fun Fact: The Creator is very stinky!!1",
+  "Fun Fact: This website is hosted using Vercel because it's faster at updating",
+  "Fun Fact: Apparently the website is about 276 KB. Mainly Because it just redirects to another website, the emulator is about 576MB",
+  "Fun Fact: I commited multiple crimes in a gated community :)",
+  "Fun Fact: I worked on this site when i was in 6th grade, now look at it! what a beauty",
+  "Fun Fact: If your reading this you like kissing men in the lips with tongue",
+  "Fun Fact: Your gay!11111",
+  "Fun Fact: A pirate's hands are always clammy!",
+  "Fun Fact: If Tomatoes are fruits, would ketchup be a smoothie?",
+  "Fun Fact: Did you know? Geico can save you 15% or more on car insurance",
+  "Fun Fact: Did you know? 1981 was the year that-AAAAAAAAAAAAAAAAAAA",
+  "Fun fact: Mayonaise is indeed an instrument"
+];
+
+
+      function generateFact() {
+        const factContainer = document.getElementById("fact-container");
+        const randomIndex = Math.floor(Math.random() * funFacts.length);
+        const randomFact = funFacts[randomIndex];
+
+        factContainer.innerHTML = `<p>${randomFact}</p>`;
+      }
+
+      function updateFunFactAutomatically() {
+        generateFact(); // Initial fact
+        setInterval(generateFact, 8000); // Change the interval (in milliseconds) as needed
+      }
+
+      updateFunFactAutomatically();
+
+      // Function to change the title
+      function changeTitle(newTitle) {
+        document.title = newTitle;
+      }
+
+      // Function to change the favicon
+      function changeFavicon(newFaviconUrl) {
+        const favicon = document.getElementById("favicon");
+        favicon.href = newFaviconUrl;
+      }
+
+      // Example usage:
+      // changeTitle("New Title");
+      // changeFavicon("https://example.com/favicon.ico");
+    </script>
   </div>
-
-  <audio id="pageLoadAudio" src="welcom.mp3" preload="auto"></audio>
-
-  <script>
-    // Function to play the sound immediately
-    function playInstantSound() {
-      var sound = new Audio('welcom.mp3'); // Replace 'your_sound.mp3' with the actual path to your sound file
-      sound.play();
-    }
-
-    // Call the function as soon as the script is executed
-    playInstantSound();
-  </script>
 </body>
 </html>
