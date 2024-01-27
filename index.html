@@ -11,6 +11,12 @@
     color: #fff; /* White text */
     font-family: monospace; /* Ensures consistent font rendering for the ASCII art */
   }
+
+  /* Hide the image by default */
+  #toggleImage {
+    display: none;
+    max-width: 100%; /* Ensure image does not exceed container width */
+  }
 </style>
 </head>
 <body>
@@ -19,9 +25,28 @@
     <source src="donut.mp3" type="audio/mpeg">
     Your browser does not support the audio tag.
   </audio>
+
+  <!-- Button to toggle image visibility -->
+  <button id="toggleButton" onclick="toggleImage()">Evidence</button>
+
+  <!-- Image to be toggled -->
+  <img id="toggleImage" src="end.png" alt="Image">
+
 <p>Website shutdown temporally due to cease and desist, im currently dealing with it. Here is a spinning donut while you wait!</p>
+<a href="https://youtube.com/@RealRicePot" class="button">Youtube Channel</a>
   <pre id="animationOutput"></pre> <!-- This pre tag will hold the output of the animation -->
+
 <script>
+  // Function to toggle image visibility
+  function toggleImage() {
+    var image = document.getElementById('toggleImage');
+    if (image.style.display === 'none') {
+      image.style.display = 'block';
+    } else {
+      image.style.display = 'none';
+    }
+  }
+
   // Place your JavaScript animation logic here
   let A = 0, B = 0, M = Math;
 
