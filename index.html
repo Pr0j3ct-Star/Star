@@ -12,6 +12,19 @@
     font-family: monospace; /* Ensures consistent font rendering for the ASCII art */
   }
 
+  /* Style for the button */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-image: linear-gradient(45deg, rgb(96, 0, 250), rgb(115, 15, 190), rgb(57, 42, 68), rgb(48, 12, 121));
+    background-size: 400%;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+    animation: gradientShift 5s infinite linear;
+  }
+
   /* Hide the image by default */
   #toggleImage {
     display: none;
@@ -25,14 +38,14 @@
     <source src="donut.mp3" type="audio/mpeg">
     Your browser does not support the audio tag.
   </audio>
-
+  <p>Website shutdown temporally due to cease and desist, im currently dealing with it. Here is a spinning donut while you wait!</p>
   <!-- Button to toggle image visibility -->
-  <button id="toggleButton" onclick="toggleImage()">Email from district</button>
+  <button id="toggleButton" onclick="toggleImage()" class="button">Toggle Image</button>
 
   <!-- Image to be toggled -->
   <img id="toggleImage" src="end.png" alt="Image">
 
-<p>Website shutdown temporally due to cease and desist, im currently dealing with it. Here is a spinning donut while you wait!</p>
+
 <a href="https://youtube.com/@RealRicePot" class="button">Youtube Channel</a>
   <pre id="animationOutput"></pre> <!-- This pre tag will hold the output of the animation -->
 
