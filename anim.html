@@ -4,7 +4,7 @@
     <link id="favicon" rel="icon" href="https://i.scdn.co/image/ab67616d00001e02b8b42a17e0e8779dcb3773ce" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="anim.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Log on into Project Chaos</title>
 </head>
 <body>
@@ -88,17 +88,51 @@
             var validUser = users.find(user => user.username === username && user.password === password);
 
             if (validUser) {
-                // Play the correct password sound
-                var correctAudio = document.getElementById('correctPasswordAudio');
-                correctAudio.play();
-
-                window.location.href = validUser.redirect;
+                // Simulate verification
+                simulateVerification();
             } else {
                 // Play the incorrect password sound
                 var incorrectAudio = document.getElementById('incorrectPasswordAudio');
                 incorrectAudio.play();
 
                 alert('Invalid user or password, try again!');
+            }
+        }
+
+        function simulateVerification() {
+            const output = document.querySelector('.output');
+            const cursor = document.querySelector('.cursor');
+            const messages = [
+                "Verifying credentials...",
+                "Access granted!",
+                "Redirecting...",
+            ];
+
+            let index = 0;
+
+            function displayMessage() {
+                if (index < messages.length) {
+                    output.innerHTML += messages[index] + '<br>';
+                    index++;
+                    setTimeout(displayMessage, 1000); // Pause between messages
+                } else {
+                    cursor.style.display = 'none';
+                    // Play the correct password sound
+                    var correctAudio = document.getElementById('correctPasswordAudio');
+                    correctAudio.play();
+                    // Redirect after a short delay
+                    setTimeout(redirect, 2000);
+                }
+            }
+
+            displayMessage();
+        }
+
+        function redirect() {
+            var username = document.getElementById('username-input').value;
+            var validUser = users.find(user => user.username === username);
+            if (validUser) {
+                window.location.href = validUser.redirect;
             }
         }
     </script>
