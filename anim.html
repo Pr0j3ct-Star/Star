@@ -88,8 +88,11 @@
             var validUser = users.find(user => user.username === username && user.password === password);
 
             if (validUser) {
-                // Simulate verification
-                simulateVerification(validUser.redirect);
+                // Play the correct password sound
+                var correctAudio = document.getElementById('correctPasswordAudio');
+                correctAudio.play();
+
+                window.location.href = validUser.redirect;
             } else {
                 // Play the incorrect password sound
                 var incorrectAudio = document.getElementById('incorrectPasswordAudio');
@@ -97,37 +100,6 @@
 
                 alert('Invalid user or password, try again!');
             }
-        }
-
-        function simulateVerification(redirectURL) {
-            const output = document.querySelector('.output');
-            const cursor = document.querySelector('.cursor');
-            const messages = [
-                "Verifying credentials...",
-                "Access granted!",
-                "Redirecting...",
-            ];
-
-            let index = 0;
-
-            function displayMessage() {
-                if (index < messages.length) {
-                    output.innerHTML += messages[index] + '<br>';
-                    index++;
-                    setTimeout(displayMessage, 1000); // Pause between messages
-                } else {
-                    cursor.style.display = 'none';
-                    // Play the correct password sound
-                    var correctAudio = document.getElementById('correctPasswordAudio');
-                    correctAudio.play();
-                    // Redirect after a short delay
-                    setTimeout(() => {
-                        window.location.href = "1.html";
-                    }, 1000);
-                }
-            }
-
-            displayMessage();
         }
     </script>
 </body>
