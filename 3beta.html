@@ -1,35 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link id="favicon" rel="icon" href="https://pr0j3ct-ch4os.github.io/favicon.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesbeta.css">
-    <title>Project Chaos V2 Site</title>
+  <link id="favicon" rel="icon" href="https://pr0j3ct-ch4os.github.io/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesbeta.css">
+
+  <title>Project Chaos V2 Site</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #000;
+      color: #0F0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: left;
+      padding: 20px;
+      background-color: #000;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    }
+
+    .title {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #0F0;
+    }
+
+    .boxes {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      background-color: #111;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      text-align: center;
+      flex: 1;
+      max-width: 300px;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 255, 0, 1);
+    }
+
+    .box h2 {
+      margin-bottom: 10px;
+      color: #0F0;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #00F;
+      color: #0F0;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: #0FF;
+      transform: scale(1.05);
+    }
+
+    .patch-notes {
+      background-color: #111;
+      color: #0F0;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .patch-notes:hover {
+      transform: scale(1.005);
+      box-shadow: 0 0 10px rgba(0, 255, 0, 1);
+    }
+
+    .patch-table {
+      margin-top: 10px;
+    }
+
+    .patch-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .patch-table th, .patch-table td {
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid #666;
+      color: #0F0;
+    }
+
+    .patch-table th {
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <div class="terminal">
-        <div class="output">
-            <span class="prompt">Project Chaos V2 Site ~$</span>
-            <span class="command">cat welcome.txt</span><br>
-            <span>Welcome to Project Chaos V2 Site!</span><br><br>
-            <span class="prompt">Project Chaos V2 Site ~$</span>
-            <span class="command">ls</span><br>
-            <span>Five Nights at Freddys 2  1v1.lol  Cube Runners  Credits</span><br>
-            <span>Use the <a href="https://thericepot.github.io/FNAF2" class="link">fnaf2</a> command to play Five Nights at Freddys 2.</span><br>
-            <span>Use the <a href="https://1v1-lol.neocities.org/" class="link">1v1lol</a> command to access 1v1.lol.</span><br>
-            <span>Use the <a href="https://cube-runners.vercel.app" class="link">cuberunners</a> command to play Cube Runners.</span><br>
-            <span>Use the <span id="credits" class="link">credits</span> command to view the credits.</span><br><br>
-            <span class="prompt">Project Chaos V2 Site ~$</span>
+  <div class="container">
+    <a href="2.html" class="button"> <------ Page 2</a>
+    <a href="1.html" class="button">Page 1 ----------> </a>
+    <h1 class="title">Project Chaos V2 Site</h1>
+    <div class="boxes">
+      <div class="box">
+        <h2>Precision Client</h2>
+        <p>Modded Eaglercraft and stuff</p>
+        <a href="https://precisionclient-88k.pages.dev/" class="button">Precision</a>
+      </div>
+      <div class="box">
+        <h2>Proxys</h2>
+        <p>A list of Proxys, A proxy is just a website unblocker so you can go on any website without any restrictions</p>
+        <a href="proxy.txt" class="button">Proxys</a>
+      </div>
+      <div class="box">
+        <h2>Outspect</h2>
+        <p>Outspect, the creator of the website design, support this guy (button doesnt work.) https://github.com/outspect  </p>
+        <div>
+          <a href="404.html" class="button">Silly Outspect</a>
         </div>
-        <div class="input">
-            <span class="prompt">Project Chaos V2 Site ~$</span>
-            <input type="text" id="command-input" class="dark-mode-textbox" placeholder="Enter command...">
-        </div>
+      </div>
     </div>
-
-    <script>
-        // JavaScript code goes here...
-    </script>
+    <div class="patch-notes">
+      <h2>Credits</h2>
+      <div class="patch-table">
+        <table>
+          <tr>
+            <th>Website Code</th>
+            <th>Emulator Code</th>
+            <th>Creators</th>
+          </tr>
+          <tr>
+            <td>Outspect= Website Code.</td>
+            <td>jsemu and theclashman2</td>           
+            <td>
+              <ul>
+                <li>TheRealRicePot</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
