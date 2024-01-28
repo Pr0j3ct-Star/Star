@@ -4,7 +4,7 @@
     <link id="favicon" rel="icon" href="https://i.scdn.co/image/ab67616d00001e02b8b42a17e0e8779dcb3773ce" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="anim.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Log on into Project Chaos</title>
 </head>
 <body>
@@ -32,67 +32,80 @@
     <audio id="correctPasswordAudio" src="ah.mp3" preload="auto"></audio>
 
     <script>
+        // Set the date you want to countdown to in MM/DD/YYYY format
+        const countDownDate = new Date("01/28/2024 9:40:00").getTime();
+
+        // Set the reason code (1 for "abuse of platform", 2 for "toxicity")
+        const reasonCode = 2; // Change this to the desired reason code
+
+        // Sample users data with username, password, redirect URL, and banned status
         var users = [
-            { username: 'ricepot', password: '051311a.22', redirect: '1.html' },
-            { username: 'ryan', password: '69696969', redirect: '1.html' },
-            { username: 'ashton', password: 'chaos', redirect: '1.html' },
-            { username: 'shannon', password: 'stevenson', redirect: '1.html' },
-            { username: 'marck', password: 'ortiz', redirect: '1.html' },
-            { username: 'william', password: 'appleton', redirect: '1.html' },
-            { username: 'i_eat_off_the_floor', password: 'skullbull6', redirect: '1.html' },
-            { username: 'mason', password: 'redshirtredhood', redirect: '1.html' },
-            { username: 'demetrious', password: 'deeznuts', redirect: '1.html' },
-            { username: 'ace', password: '905277', redirect: '1.html' },
-            { username: 'cade', password: 'a', redirect: '1.html' },
-            { username: 'leo', password: 'moreno', redirect: '1.html' },
-            { username: 'jason', password: 'PASSWORd1', redirect: '1.html' },
-        ];
+      { username: 'ricepot', password: '051311a.22', redirect: '1.html' },
+      { username: 'ryan', password: '69696969', redirect: '1.html' },
+      { username: 'ashton', password: 'chaos', redirect: '1.html' },
+      { username: 'shannon', password: 'stevenson', redirect: '1.html' },
+      { username: 'marck', password: 'ortiz', redirect: '1.html' },
+      { username: 'william', password: 'appleton', redirect: '1.html' },
+      { username: 'i_eat_off_the_floor', password: 'skullbull6', redirect: '1.html' },
+      { username: 'mason', password: 'redshirtredhood', redirect: '1.html' },
+      { username: 'demetrious', password: 'deeznuts', redirect: '1.html' },
+      { username: 'ace', password: '905277', redirect: '1.html' }, 
+      { username: 'cade', password: 'a', redirect: '1.html' }, 
+      { username: 'leo', password: 'moreno', redirect: '1.html' },
+      { username: 'jason', password: 'PASSWORd1', redirect: '1.html' },
+    ];
 
-        function type() {
-            const output = document.querySelector('.output');
-            const cursor = document.querySelector('.cursor');
-            const commands = [
-                "Welcome to Pr0j3ct-Ch4os",
-                "Please enter your credentials...",
-            ];
-
-            let index = 0;
-            let commandIndex = 0;
-
-            function typeCommand() {
-                if (commandIndex < commands.length) {
-                    if (index < commands[commandIndex].length) {
-                        output.textContent += commands[commandIndex].charAt(index);
-                        index++;
-                        setTimeout(typeCommand, 50);
-                    } else {
-                        output.innerHTML += '<br>';
-                        index = 0;
-                        commandIndex++;
-                        setTimeout(typeCommand, 1000); // Pause between commands
-                    }
-                } else {
-                    cursor.style.display = 'inline';
-                }
+        // Function to get the reason based on the code
+        function getReason(code) {
+            switch (code) {
+                case 1:
+                    return "idk";
+                case 2:
+                    return "Reporting Website to teachers/staff.";
+                default:
+                    return "Reason not specified";
             }
-
-            typeCommand();
         }
 
-        document.addEventListener('DOMContentLoaded', type);
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            // Get the current date and time
+            const now = new Date().getTime();
 
+            // Calculate the remaining time
+            const distance = countDownDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            // Get the reason based on the code
+            const reason = getReason(reasonCode);
+
+            // Display the result with additional text
+            document.getElementById("countdown").innerHTML = `Reason for ban: ${reason} | Days remaining until unban: ${days}`;
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = `Please wait for creator to unban you. (${reason})`;
+            }
+        }, 1000);
+
+        // Function to authenticate users
         function authenticate() {
             var username = document.getElementById('username-input').value;
             var password = document.getElementById('password-input').value;
 
-            var validUser = users.find(user => user.username === username && user.password === password);
+            var user = users.find(user => user.username === username && user.password === password);
 
-            if (validUser) {
-                // Play the correct password sound
-                var correctAudio = document.getElementById('correctPasswordAudio');
-                correctAudio.play();
-
-                window.location.href = validUser.redirect;
+            if (user) {
+                if (user.banned) {
+                    // Display message in terminal for banned user
+                    appendMessage("This account is banned. Please contact support.");
+                } else {
+                    // Proceed with authentication for non-banned user
+                    simulateVerification(user.redirect);
+                }
             } else {
                 // Play the incorrect password sound
                 var incorrectAudio = document.getElementById('incorrectPasswordAudio');
@@ -100,6 +113,12 @@
 
                 alert('Invalid user or password, try again!');
             }
+        }
+
+        // Function to append message to terminal
+        function appendMessage(message) {
+            const output = document.querySelector('.output');
+            output.innerHTML += message + '<br>';
         }
     </script>
 </body>
