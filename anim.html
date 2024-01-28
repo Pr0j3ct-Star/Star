@@ -4,67 +4,25 @@
     <link id="favicon" rel="icon" href="https://i.scdn.co/image/ab67616d00001e02b8b42a17e0e8779dcb3773ce" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="anim.css">
     <title>Log on into Project Chaos</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #0F0;
-            font-family: monospace;
-            padding: 20px;
-        }
-
-        .container {
-            text-align: center;
-        }
-
-        .boxes {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .box {
-            background-color: #000;
-            border: 2px solid #0F0;
-            padding: 20px;
-            margin: 20px;
-        }
-
-        input, button {
-            background-color: #000;
-            color: #0F0;
-            border: 1px solid #0F0;
-            padding: 5px;
-            margin: 5px;
-            font-family: monospace;
-        }
-
-        button:hover {
-            cursor: pointer;
-        }
-
-        .cursor {
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
         <h1>Pr0j3ct-Ch4os</h1>
         <h2>Login you silly goober!!111</h2>
-        <div class="boxes">
-            <div class="box">
-                <h2>Login</h2>
-                <p>This will be required.</p>
+        <div class="terminal">
+            <div class="output"></div>
+            <div class="input">
+                <span class="prompt">$</span>
                 <input type="text" id="username-input" class="dark-mode-textbox" placeholder="Enter your user.">
+            </div>
+            <div class="input">
+                <span class="prompt">$</span>
                 <input type="password" id="password-input" class="dark-mode-textbox" placeholder="Enter your password.">
+            </div>
+            <div class="input">
+                <span class="prompt">$</span>
                 <button onclick="authenticate()" class="button">Login</button>
             </div>
         </div>
@@ -95,10 +53,7 @@
             const cursor = document.querySelector('.cursor');
             const commands = [
                 "Welcome to Pr0j3ct-Ch4os",
-                "Loading assets...",
-                "Initializing components...",
-                "Executing scripts...",
-                "All systems go!",
+                "Please enter your credentials...",
             ];
 
             let index = 0;
@@ -117,7 +72,7 @@
                         setTimeout(typeCommand, 1000); // Pause between commands
                     }
                 } else {
-                    cursor.style.display = 'none';
+                    cursor.style.display = 'inline';
                 }
             }
 
