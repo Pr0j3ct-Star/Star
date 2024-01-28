@@ -1,0 +1,69 @@
+body {
+    font-family: monospace;
+    background-color: black;
+    color: #00ff00; /* Green text */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+.title {
+    color: #ff00ff; /* Magenta title */
+}
+
+.box {
+    background-color: #222;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #444;
+    color: #00ff00;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: #00ff00; /* Green prompt */
+}
+
+.dark-mode-textbox {
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    border-radius: 3px;
+    padding: 5px;
+    margin-left: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.link {
+    color: #00ff00; /* Green link */
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.command {
+    color: #0074D9; /* Blue command */
+}
