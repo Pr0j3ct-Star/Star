@@ -89,7 +89,7 @@
 
             if (validUser) {
                 // Simulate verification
-                simulateVerification();
+                simulateVerification(validUser.redirect);
             } else {
                 // Play the incorrect password sound
                 var incorrectAudio = document.getElementById('incorrectPasswordAudio');
@@ -99,7 +99,7 @@
             }
         }
 
-        function simulateVerification() {
+        function simulateVerification(redirectURL) {
             const output = document.querySelector('.output');
             const cursor = document.querySelector('.cursor');
             const messages = [
@@ -121,19 +121,13 @@
                     var correctAudio = document.getElementById('correctPasswordAudio');
                     correctAudio.play();
                     // Redirect after a short delay
-                    setTimeout(redirect, 2000);
+                    setTimeout(() => {
+                        window.location.href = redirectURL;
+                    }, 1000);
                 }
             }
 
             displayMessage();
-        }
-
-        function redirect() {
-            var username = document.getElementById('username-input').value;
-            var validUser = users.find(user => user.username === username);
-            if (validUser) {
-                window.location.href = validUser.redirect;
-            }
         }
     </script>
 </body>
