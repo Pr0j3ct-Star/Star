@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link id="favicon" rel="icon" href="https://i.scdn.co/image/ab67616d00001e02b8b42a17e0e8779dcb3773ce" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesbeta.css">
+  <title>Log on into Project Chaos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #000;
+      color: #0F0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .container h1, .container h2 {
+      color: #0F0;
+    }
+
+    .box {
+      background-color: #111;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 255, 0, 1);
+    }
+
+    .dark-mode-textbox {
+      padding: 10px;
+      border: 1px solid #0F0;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 100%;
+      background-color: #000;
+      color: #0F0;
+      outline: none;
+      transition: border-color 0.3s, background-color 0.3s;
+      margin-bottom: 10px;
+    }
+
+    .dark-mode-textbox::placeholder {
+      color: #0F0;
+    }
+
+    .dark-mode-textbox:focus {
+      border-color: #00F;
+      background-color: #111;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #00F;
+      color: #0F0;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background-color: #0FF;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pr0j3ct-Ch4os</h1>
+    <h2>Login you silly goober!!111</h2>
+    <div class="boxes">
+      <div class="box">
+        <h2>Login</h2>
+        <p>This will be required.</p>
+        <input type="text" id="username-input" class="dark-mode-textbox" placeholder="Enter your user.">
+        <input type="password" id="password-input" class="dark-mode-textbox" placeholder="Enter your password.">
+        <button onclick="authenticate()" class="button">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="incorrectPasswordAudio" src="password.mp3" preload="auto"></audio>
+  <audio id="correctPasswordAudio" src="ah.mp3" preload="auto"></audio>
+
+  <script>
+    var users = [
+      { username: 'ricepot', password: '051311a.22', redirect: '1.html' },
+      { username: 'ryan', password: '69696969', redirect: '1.html' },
+      { username: 'ashton', password: 'chaos', redirect: '1.html' },
+      { username: 'shannon', password: 'stevenson', redirect: '1.html' },
+      { username: 'marck', password: 'ortiz', redirect: '1.html' },
+      { username: 'william', password: 'appleton', redirect: '1.html' },
+      { username: 'i_eat_off_the_floor', password: 'skullbull6', redirect: '1.html' },
+      { username: 'mason', password: 'redshirtredhood', redirect: '1.html' },
+      { username: 'demetrious', password: 'deeznuts', redirect: '1.html' },
+      { username: 'ace', password: '905277', redirect: '1.html' }, 
+      { username: 'cade', password: 'a', redirect: '1.html' }, 
+      { username: 'leo', password: 'moreno', redirect: '1.html' },
+      { username: 'jason', password: 'PASSWORd1', redirect: '1.html' },
+    ];
+
+    function authenticate() {
+      var username = document.getElementById('username-input').value;
+      var password = document.getElementById('password-input').value;
+
+      var validUser = users.find(user => user.username === username && user.password === password);
+
+      if (validUser) {
+        // Play the correct password sound
+        var correctAudio = document.getElementById('correctPasswordAudio');
+        correctAudio.play();
+
+        window.location.href = validUser.redirect;
+      } else {
+        // Play the incorrect password sound
+        var incorrectAudio = document.getElementById('incorrectPasswordAudio');
+        incorrectAudio.play();
+
+        alert('Invalid user or password, try again!');
+      }
+    }
+  </script>
+</body>
+</html>
