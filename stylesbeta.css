@@ -1,69 +1,148 @@
-body {
-    font-family: monospace;
-    background-color: black;
-    color: #00ff00; /* Green text */
+/*
+<!-- silly ahh css file for the theme and shit -->
+<!-- credits to outspect.-->
+*/
+html {
+    background-image: url('https://raw.githubusercontent.com/GBA-CHAOS2/GBA_EMU_discontinued/main/download.jpg');
+    background-size: cover;
+  }
+  
+  body {
     margin: 0;
-    padding: 0;
-}
-
-.container {
-    padding: 20px;
-}
-
-.title {
-    color: #ff00ff; /* Magenta title */
-}
-
-.box {
-    background-color: #222;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.button {
-    background-color: #444;
-    color: #00ff00;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.button:hover {
-    background-color: #555;
-}
-
-.input {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000000;
+    color: #ffffff;
     display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-.prompt {
-    color: #00ff00; /* Green prompt */
-}
-
-.dark-mode-textbox {
-    background-color: #000;
-    color: #00ff00;
-    border: 1px solid #00ff00;
-    border-radius: 3px;
-    padding: 5px;
-    margin-left: 5px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.link {
-    color: #00ff00; /* Green link */
+    min-height: 100vh;
+  }
+  
+  .container {
+    text-align: left; /* Align content to left for terminal style */
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .title {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  
+  .boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .box {
+    background-color: #111111;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(1, 33, 75, 0.5);
+  }
+  
+  .box h2 {
+    margin-bottom: 10px;
+  }
+  
+  .dark-mode-textbox {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    margin-bottom: 10px;
+  }
+  
+  .dark-mode-textbox::placeholder {
+    color: #999;
+  }
+  
+  .dark-mode-textbox:focus {
+    border-color: #007bff;
+    background-color: #111;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-image: linear-gradient(45deg, rgb(96, 0, 250), rgb(115, 15, 190), rgb(57, 42, 68), rgb(48, 12, 121));
+    background-size: 400%;
+    color: #ffffff;
     text-decoration: none;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
-
-.command {
-    color: #0074D9; /* Blue command */
-}
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+  }
+  
+  .button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(47, 128, 237, 0.5);
+  }
+  
+  .patch-notes {
+    background-color: #111111;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(1, 33, 75, 0.5);
+    font-family: "Courier New", monospace;
+  }
+  
+  .patch-table {
+    margin-top: 10px;
+  }
+  
+  .patch-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .patch-table th, .patch-table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #666;
+  }
+  
+  .patch-table th {
+    font-weight: bold;
+  }
+  
+  .green-text {
+    color: #00fe2f;
+  }
+  
+  .red-text {
+    color: #ff0000;
+  }
+  
+  .orange-text {
+    color: #ff9900;
+  }
+  
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 0% 50%;
+    }
+    75% {
+      background-position: 100% 50%;
+    }
+  }
+  
