@@ -1,114 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pr0j3ct-Ch4os</title>
-<style>
-  /* Style to make the background dark */
-  body {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    font-family: monospace; /* Ensures consistent font rendering for the ASCII art */
-  }
-
-  /* Style for the button */
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-image: linear-gradient(45deg, rgb(96, 0, 250), rgb(115, 15, 190), rgb(57, 42, 68), rgb(48, 12, 121));
-    background-size: 400%;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: transform 0.2s ease;
-    animation: gradientShift 5s infinite linear;
-  }
-
-  /* Hide the image by default */
-  #toggleImage {
-    display: none;
-    max-width: 100%; /* Ensure image does not exceed container width */
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Chaos</title>
 </head>
 <body>
-  <!-- Audio element for background music -->
-  <audio id="bgMusic" autoplay loop>
-    <source src="donut.mp3" type="audio/mpeg">
-    Your browser does not support the audio tag.
-  </audio>
-  <p>Website Has been Closed down for V3 for the servers to chill out a little. Here is a spinning donut to wait!</p>
-  <p>Release Date: 1/29/24</p>
-  <!-- Button to toggle image visibility -->
-  
+    <h1>Opening in about:blank then redirecting to nasa.gov...</h1>
 
-  <!-- Image to be toggled -->
-  <img id="toggleImage" src="end.png" alt="Image">
+    <!-- Your script goes here -->
+    <script>
+        function openGame() {
+            var win = window.open();
+            var url = "1.html";
+            var iframe = win.document.createElement('iframe');
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.src = url;
 
+            // Check if the iframe is loaded successfully
+            iframe.onload = function() {
+                // Check if the content is blocked
+                if (iframe.contentDocument && iframe.contentDocument.body.innerHTML.includes("ERR_BLOCKED_BY_CLIENT")) {
+                    alert("Content blocked by client!");
+                    win.close(); // Close the window if blocked
+                } else {
+                    // Redirect to another website after the script is done
+                    window.location.href = "https://nasa.gov";
+                }
+            };
 
-<a href="https://youtube.com/@RealRicePot" class="button">Youtube Channel</a>
-  <pre id="animationOutput"></pre> <!-- This pre tag will hold the output of the animation -->
-
-<script>
-  // Function to toggle image visibility
-  function toggleImage() {
-    var image = document.getElementById('toggleImage');
-    if (image.style.display === 'none') {
-      image.style.display = 'block';
-    } else {
-      image.style.display = 'none';
-    }
-  }
-
-  // Place your JavaScript animation logic here
-  let A = 0, B = 0, M = Math;
-
-  const asciiframe = () => {
-    let b = [], z = [];
-    A += 0.05;
-    B += 0.07;
-    const cA = M.cos(A);
-    const sA = M.sin(A);
-    const cB = M.cos(B);
-    const sB = M.sin(B);
-
-    for (let k = 0; k < 1760; k++) {
-        b[k] = k % 80 == 79 ? "\n" : " ";
-        z[k] = 0;
-    }
-
-    for (let j = 0; j < 6.28; j += 0.07) {
-        const ct = M.cos(j);
-        const st = M.sin(j);
-
-        for (let i = 0; i < 6.28; i += 0.02) {
-            const sp = M.sin(i), cp = M.cos(i);
-            const h = ct + 2;
-            const D = 1 / (sp * h * sA + st * cA + 5);
-            const t = sp * h * cA - st * sA;
-            const x = (40 + 30 * D * (cp * h * cB - t * sB)) | 0;
-            const y = (12 + 15 * D * (cp * h * sB + t * cB)) | 0;
-            const o = x + 80 * y;
-            const N = (8 * ((st * sA - sp * ct * cA) * cB - sp * ct * sA - st * cA - cp * ct * sB)) | 0;
-
-            if (y < 22 && y >= 0 && x >= 0 && x < 79 && D > z[o]) {
-                z[o] = D;
-                b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
-            }
+            win.document.body.appendChild(iframe);
         }
-    }
-    document.getElementById('animationOutput').innerText = b.join(""); // Output the result to the pre tag
-  };
 
-  const intervalId = setInterval(asciiframe, 50); // Animation interval of 50 milliseconds
-
-  // Optionally, you can stop the animation and reload the page if the music stops playing
-  const bgMusic = document.getElementById('bgMusic');
-  bgMusic.addEventListener('ended', () => {
-    clearInterval(intervalId); // Stop the animation
-    location.reload(); // Reload the page
-  });
-</script>
+        // Automatically open the game when the page loads
+        window.onload = function() {
+            openGame();
+        };
+    </script>
 </body>
 </html>
