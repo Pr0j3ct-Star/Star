@@ -1,0 +1,17 @@
+{
+  "name": "pr0j3ct-ch4os",
+  "version": "3.0.0",
+  "description": "the worst game website",
+  "main": "index.html",
+  "scripts": {
+    "start": "vercel",
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^X.X.X"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": "RicePot",
+  "license": "none"
+}
