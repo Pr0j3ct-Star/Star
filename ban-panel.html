@@ -73,8 +73,19 @@
     <script>
         var users = [
             { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false },
-            { username: 'ryan', password: '69696969', isDeveloper: false, banned: false, deactivated: false },
-            // Add other users here
+            { username: 'ryan', password: '69696969', isDeveloper: true, banned: false, deactivated: false },
+            { username: 'ashton', password: 'chaos', isDeveloper: false, banned: false, deactivated: true },
+            { username: 'shannon', password: 'stevenson', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'marck', password: 'ortiz', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'william', password: 'appleton', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'mason', password: 'redshirtredhood', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'demetrious', password: 'deeznuts', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'ace', password: '905277', isDeveloper: false, banned: true, deactivated: false }, 
+            { username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: true }, 
+            { username: 'leo', password: 'moreno', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'jason', password: 'PASSWORd1', isDeveloper: false, banned: false, deactivated: false }
+            // Add more users as needed
         ];
 
         function renderUserList() {
@@ -119,8 +130,19 @@
         }
 
         function loginWithGitHub() {
-            // GitHub OAuth login logic
-            // Replace with your implementation
+            // Replace these values with your GitHub OAuth app credentials
+            var clientId = 'c99b4573a93ad91def0d';
+            var redirectUri = 'pr0j3ct-ch4os.vercel.app/ban-panel.html';
+            var scope = 'user'; // Adjust scope as needed
+
+            // Construct the GitHub OAuth authorization URL
+            var githubAuthUrl = 'https://github.com/login/oauth/authorize' +
+                                '?client_id=' + encodeURIComponent(clientId) +
+                                '&redirect_uri=' + encodeURIComponent(redirectUri) +
+                                '&scope=' + encodeURIComponent(scope);
+
+            // Redirect the user to GitHub for authentication
+            window.location.href = githubAuthUrl;
         }
 
         // Render the initial user list
