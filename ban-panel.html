@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="checkbox"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Developer Dashboard</h1>
+    <button onclick="loginWithGitHub()">Login with GitHub</button>
+    <h2>User Management</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Banned</th>
+                <th>Deactivated</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="userList">
+            <!-- User entries will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script>
+        var users = [
+            { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false },
+            { username: 'ryan', password: '69696969', isDeveloper: false, banned: false, deactivated: false },
+            // Add other users here
+        ];
+
+        function renderUserList() {
+            var userListHtml = '';
+            users.forEach(function(user) {
+                userListHtml += '<tr>';
+                userListHtml += '<td>' + user.username + '</td>';
+                userListHtml += '<td><input type="checkbox" onchange="updateUserBannedStatus(this.checked, \'' + user.username + '\')" ' + (user.banned ? 'checked' : '') + '></td>';
+                userListHtml += '<td><input type="checkbox" onchange="updateUserDeactivatedStatus(this.checked, \'' + user.username + '\')" ' + (user.deactivated ? 'checked' : '') + '></td>';
+                userListHtml += '<td><button onclick="banUser(\'' + user.username + '\')">Ban</button></td>';
+                userListHtml += '</tr>';
+            });
+            document.getElementById('userList').innerHTML = userListHtml;
+        }
+
+        function banUser(username) {
+            var user = users.find(function(user) {
+                return user.username === username;
+            });
+            if (user) {
+                user.banned = true;
+                renderUserList();
+            }
+        }
+
+        function updateUserBannedStatus(status, username) {
+            var user = users.find(function(user) {
+                return user.username === username;
+            });
+            if (user) {
+                user.banned = status;
+            }
+        }
+
+        function updateUserDeactivatedStatus(status, username) {
+            var user = users.find(function(user) {
+                return user.username === username;
+            });
+            if (user) {
+                user.deactivated = status;
+            }
+        }
+
+        function loginWithGitHub() {
+            // GitHub OAuth login logic
+            // Replace with your implementation
+        }
+
+        // Render the initial user list
+        renderUserList();
+    </script>
+</body>
+</html>
