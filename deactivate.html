@@ -112,19 +112,20 @@
 
     <script>
         var users = [
-            { username: 'ricepot', password: '051311a.22', redirect: '1dev.html', banned: false, deactivated: false },
-            { username: 'ryan', password: '69696969', redirect: '1dev.html', banned: false, deactivated: false },
-            { username: 'ashton', password: 'chaos', redirect: '1.html', banned: false, deactivated: false },
-            { username: 'shannon', password: 'stevenson', redirect: '1.html', banned: false, deactivated: false },
-            { username: 'marck', password: 'ortiz', redirect: '1.html', banned: false, deactivated: false },
-            { username: 'william', password: 'appleton', redirect: '1.html', banned: false, deactivated: false },
-            { username: 'i_eat_off_the_floor', password: 'skullbull6', redirect: '1.html', banned: false, deactivated: false },
-            { username: 'mason', password: 'redshirtredhood', redirect: '1.html', banned: false, deactivated: false },
-            { username: 'demetrious', password: 'deeznuts', redirect: '1.html', banned: false, deactivated: false },
-            { username: 'ace', password: '905277', redirect: '1.html', banned: true, deactivated: false }, 
-            { username: 'cade', password: 'a', redirect: '1.html', banned: false, deactivated: true }, 
-            { username: 'leo', password: 'moreno', redirect: '1.html', banned: false, deactivated: false },
-            { username: 'jason', password: 'PASSWORd1', redirect: '1.html', banned: false, deactivated: false },
+            { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false },
+            { username: 'ryan', password: '69696969', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'ashton', password: 'chaos', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'shannon', password: 'stevenson', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'marck', password: 'ortiz', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'william', password: 'appleton', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'mason', password: 'redshirtredhood', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'demetrious', password: 'deeznuts', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'ace', password: '905277', isDeveloper: false, banned: true, deactivated: false }, 
+            { username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: true }, 
+            { username: 'leo', password: 'moreno', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'jason', password: 'PASSWORd1', isDeveloper: false, banned: false, deactivated: false }
+            // Add more users as needed
         ];
 
         function authenticate() {
@@ -135,17 +136,13 @@
 
             if (user) {
                 if (user.banned) {
-                    // Display message in terminal for banned user
-                    appendMessage("did you really just get banned? skill issue. contact projectchaos170@gmail.com to get unbanned");
+                    appendMessage("Did you really just get banned? Skill issue. Contact projectchaos170@gmail.com to get unbanned.");
                 } else if (user.deactivated) {
-                    // Display message in terminal for deactivated user
                     appendMessage("Your account has been deactivated. Please contact support for assistance.");
                 } else {
-                    // Proceed with authentication for non-banned user
-                    simulateVerification(user.redirect);
+                    simulateVerification(user);
                 }
             } else {
-                // Play the incorrect password sound
                 var incorrectAudio = document.getElementById('incorrectPasswordAudio');
                 incorrectAudio.play();
 
@@ -158,13 +155,11 @@
             output.innerHTML += message + '<br>';
         }
 
-        // Placeholder function for verification simulation
-        function simulateVerification(redirectUrl) {
-            // Play the correct password sound
+        function simulateVerification(user) {
+            var redirectUrl = user.isDeveloper ? '1dev.html' : '1.html';
             var correctAudio = document.getElementById('correctPasswordAudio');
             correctAudio.play();
 
-            // Redirect to the specified URL
             window.location.href = redirectUrl;
         }
     </script>
