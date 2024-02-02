@@ -102,13 +102,13 @@
             </div>
             <div class="input">
                 <span class="prompt">$</span>
-                <button onclick="authenticate()" class="button">Login</button>
+                <button onclick="authenticate()" class="button" id="login-button">Login</button>
             </div>
         </div>
     </div>
 
     <audio id="incorrectPasswordAudio" src="password.mp3" preload="auto"></audio>
-    <audio id="correctPasswordAudio" src="ah.mp3" preload="auto"></audio>
+    <audio id="correctPasswordAudio" src="correct.mp3" preload="auto"></audio>
 
     <script>
         var users = [
@@ -124,9 +124,20 @@
             { username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: false }, 
             { username: 'leo', password: 'moreno', isDeveloper: true, banned: false, deactivated: false },
             { username: 'jason', password: 'PASSWORd1', isDeveloper: true, banned: false, deactivated: false },
-            { username: 'YourLocalCornStar', password: 'cornhub', isDeveloper: false, banned: false, deactivated: false }
+            { username: 'josiah', password: '906839', isDeveloper: false, banned: false, deactivated: false },
+            { username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false }
+
             // Add more users as needed
         ];
+
+        // Function to delay login button
+        function delayLoginButton() {
+            var loginButton = document.getElementById('login-button');
+            loginButton.disabled = true;
+            setTimeout(function() {
+                loginButton.disabled = false;
+            }, 3000); // 3000 milliseconds = 3 seconds
+        }
 
         function authenticate() {
             var username = document.getElementById('username-input').value;
@@ -162,6 +173,9 @@
 
             window.location.href = redirectUrl;
         }
+
+        // Call the function to delay the login button
+        delayLoginButton();
     </script>
 </body>
 </html>
