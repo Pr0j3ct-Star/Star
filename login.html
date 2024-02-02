@@ -112,20 +112,20 @@
 
     <script>
         var users = [
-            { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false },
-            { username: 'ryan', password: '69696969', isDeveloper: true, banned: false, deactivated: false },
-            { username: 'ashton', password: 'chaos', isDeveloper: true, banned: false, deactivated: false },
-            { username: 'shannon', password: 'stevenson', isDeveloper: false, banned: false, deactivated: false },
-            { username: 'marck', password: 'ortiz', isDeveloper: false, banned: true, deactivated: false },
-            { username: 'william', password: 'appleton', isDeveloper: true, banned: false, deactivated: false },            
-            { username: 'mason', password: 'redshirtredhood', isDeveloper: false, banned: false, deactivated: false },
-            { username: 'demetrious', password: 'deeznuts', isDeveloper: false, banned: false, deactivated: false },
-            { username: 'ace', password: '905277', isDeveloper: false, banned: true, deactivated: false }, 
-            { username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: false }, 
-            { username: 'leo', password: 'moreno', isDeveloper: true, banned: false, deactivated: false },
-            { username: 'jason', password: 'PASSWORd1', isDeveloper: true, banned: false, deactivated: false },
-            { username: 'josiah', password: '906839', isDeveloper: false, banned: false, deactivated: false },
-            { username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false }
+            { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false, ace: false },
+            { username: 'ryan', password: '69696969', isDeveloper: true, banned: false, deactivated: false, ace: false },
+            { username: 'ashton', password: 'chaos', isDeveloper: true, banned: false, deactivated: false, ace: false },
+            { username: 'shannon', password: 'stevenson', isDeveloper: false, banned: false, deactivated: false, ace: false },
+            { username: 'marck', password: 'ortiz', isDeveloper: false, banned: true, deactivated: false, ace: true },
+            { username: 'william', password: 'appleton', isDeveloper: true, banned: false, deactivated: false, ace: false },            
+            { username: 'mason', password: 'redshirtredhood', isDeveloper: false, banned: false, deactivated: false, ace: false },
+            { username: 'demetrious', password: 'deeznuts', isDeveloper: false, banned: false, deactivated: false, ace: false },
+            { username: 'ace', password: '905277', isDeveloper: false, banned: false, deactivated: false, ace: true }, 
+            { username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: false, ace: false }, 
+            { username: 'leo', password: 'moreno', isDeveloper: true, banned: false, deactivated: false, ace: false },
+            { username: 'jason', password: 'PASSWORd1', isDeveloper: true, banned: false, deactivated: false, ace: false },
+            { username: 'josiah', password: '906839', isDeveloper: false, banned: false, deactivated: false, ace: false },
+            { username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false, ace: false }
 
             // Add more users as needed
         ];
@@ -146,7 +146,9 @@
             var user = users.find(user => user.username === username && user.password === password);
 
             if (user) {
-                if (user.banned) {
+                if (user.ace) {
+                    appendMessage("fuck you ace your an asshole");
+                } else if (user.banned) {
                     appendMessage("Did you really just get banned? Skill issue. Contact projectchaos170@gmail.com to get unbanned.");
                 } else if (user.deactivated) {
                     appendMessage("Your account has been deactivated. Contact projectchaos170@gmail.com to request activation");
