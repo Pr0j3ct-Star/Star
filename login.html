@@ -130,15 +130,6 @@
             // Add more users as needed
         ];
 
-        // Function to delay login button
-        function delayLoginButton() {
-            var loginButton = document.getElementById('login-button');
-            loginButton.disabled = true;
-            setTimeout(function() {
-                loginButton.disabled = false;
-            }, 5000); // 3000 milliseconds = 3 seconds
-        }
-
         function authenticate() {
             var username = document.getElementById('username-input').value;
             var password = document.getElementById('password-input').value;
@@ -147,7 +138,7 @@
 
             if (user) {
                 if (user.ace) {
-                    appendMessage("fuck you ace your an asshole, no login for you bitch #packwatch");
+                    appendMessage("go kill yourself your worthless, nobody loves you, even your family hates you. your a dissapointment,you serve zero purpose, go kill yourself NOW. ");
                 } else if (user.banned) {
                     appendMessage("Did you really just get banned? Skill issue. Contact projectchaos170@gmail.com to get unbanned.");
                 } else if (user.deactivated) {
@@ -175,9 +166,6 @@
 
             window.location.href = redirectUrl;
         }
-
-        // Call the function to delay the login button
-        delayLoginButton();
     </script>
 </body>
 </html>
