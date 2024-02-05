@@ -89,7 +89,7 @@
 <body>
     <div class="container">
         <h1>Pr0j3ct-Ch4os</h1>
-        <h2>Login now before i take your penis</h2>
+        <h2>Login now before i take your food</h2>
         <div class="terminal">
             <div class="output"></div>
             <div class="input">
@@ -113,6 +113,8 @@
     <audio id="correctPasswordAudio" src="correct.mp3" preload="auto"></audio>
 
     <script>
+        var maintenanceMode = true; // Set this to true for maintenance mode, false otherwise
+
         var users = [
             { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false, terminated: false },
             { username: 'ryan', password: '69696969', isDeveloper: true, banned: false, deactivated: false, terminated: false },
@@ -151,6 +153,11 @@
             var username = document.getElementById('username-input').value;
             var password = document.getElementById('password-input').value;
     
+            if (maintenanceMode) {
+                appendMessage("Website is under maintenance. Main Page unavailable, use lite at the moment.");
+                return;
+            }
+    
             var user = users.find(user => user.username === username && user.password === password);
     
             if (user) {
@@ -187,4 +194,5 @@
             }, 1500); // 3000 milliseconds = 3 seconds
         }
     </script>
-    
+</body>
+</html>
