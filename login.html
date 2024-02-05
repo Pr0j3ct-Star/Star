@@ -152,12 +152,13 @@
         function authenticate() {
             var username = document.getElementById('username-input').value;
             var password = document.getElementById('password-input').value;
-    
-            if (maintenanceMode) {
-                appendMessage("Website is under maintenance. Main Page unavailable, use lite at the moment.");
+
+            // Allow access to "ricepot" and "ryan" even during maintenance mode
+            if (maintenanceMode && username !== "ricepot" && username !== "ryan") {
+                appendMessage("Website under maintenance. Main site unavailable until finished.");
                 return;
             }
-    
+
             var user = users.find(user => user.username === username && user.password === password);
     
             if (user) {
