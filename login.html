@@ -113,7 +113,7 @@
     <audio id="correctPasswordAudio" src="correct.mp3" preload="auto"></audio>
 
     <script>
-        var maintenanceMode = false; // Set this to true for maintenance mode, false otherwise
+        var maintenanceMode = false; // maintenanc
 
         var users = [
             { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false, terminated: false },
@@ -134,10 +134,10 @@
             { username: 'YourLocalCornStar', password: 'cornhub', isDeveloper: false, banned: false, deactivated: false, terminated: false },
             { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: false, banned: false, deactivated: false, terminated: false }
     
-            // Add more users as needed
+            // user database
         ];
     
-        // Add event listener for key press on input fields
+        
         document.getElementById("username-input").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 event.preventDefault();
@@ -156,7 +156,7 @@
             var username = document.getElementById('username-input').value;
             var password = document.getElementById('password-input').value;
 
-            // Allow access to "ricepot" and "ryan" even during maintenance mode
+            // onl ricpt an ryn
             if (maintenanceMode && username !== "ricepot" && username !== "ryan") {
                 appendMessage("Website under maintenance. Main site unavailable until finished.");
                 return;
@@ -192,10 +192,10 @@
             var correctAudio = document.getElementById('correctPasswordAudio');
             correctAudio.play();
     
-            // Delay before redirecting
+            // sound stuf lalala
             setTimeout(function() {
                 window.location.href = redirectUrl;
-            }, 1500); // 3000 milliseconds = 3 seconds
+            }, 1500); // 3 sec
         }
     </script>
 </body>
