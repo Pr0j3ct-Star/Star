@@ -158,10 +158,11 @@
             var password = document.getElementById('password-input').value;
 
             // onl ricpt an ryn
-            if (maintenanceMode && username !== "ricepot" && username !== "ryan") {
-                appendMessage("Website under maintenance. Main site unavailable until finished.");
-                return;
-            }
+            if (maintenanceMode && username !== "ricepot" && username !== "ryan" && username !== "ashton") {
+    appendMessage("Website under maintenance. Main site unavailable until finished.");
+    return;
+}
+
 
             var user = users.find(user => user.username === username && user.password === password);
     
