@@ -160,7 +160,7 @@
 
     <script>
       function loadPatchNotes() {
-        fetch('patch-notes.json')
+        fetch('patch_notes.json')
           .then(response => response.json())
           .then(data => {
             const patchNotesContainer = document.getElementById('patch-notes');
@@ -196,8 +196,39 @@
           });
       }
 
+      function generateFact() {
+        const factContainer = document.getElementById("fact-container");
+        const funFacts = [
+          "Fun Fact:90% of this website was coded with ChatGPT,because im stupid",
+          "Fun Fact: The Creator is very stinky!!1",
+          "Fun Fact: people that use twitter dont shower",
+          "Fun Fact: Apparently the website is about 276 KB. Mainly Because it just redirects to another website, the emulator is about 576MB",
+          "Fun Fact: I commited multiple crimes in a gated community :)",
+          "Fun Fact: i_eat_off_the_floor has a fired streak of 2 as of 2/2/24",
+          "Fun Fact: If your reading this you like kissing men in the lips with tongue",
+          "Fun Fact: Your gay!11111",
+          "Fun Fact: Did you know? 1981 was the year that-AAAAAAAAAAAAAAAAAAA",
+          "Fun Fact: i wanna fire daniel (i eat off the floor) again ",
+          "Fun fact: MAYONNAISE ON A ESCALATOR ITS GOING UPSTAIRS SO SEE YA LATER!!111111",
+          "Fun Fact: A Pirate's bootleg is always falling",
+          "Fun Fact:Shells break on impact when ur in a bed- ",
+          "Fun Fact: Un video pa mi gente para pelder el tiempo empezemos, SALAMALEO SALAMALECO MALECO MALECO SAMAAAAAAAAAAAAAAAAa",
+          "Fun Fact: leo waz here :)"
+        ];
+        const randomIndex = Math.floor(Math.random() * funFacts.length);
+        const randomFact = funFacts[randomIndex];
+        factContainer.innerHTML = randomFact;
+      }
+
+      function updateFunFactAutomatically() {
+        generateFact(); 
+        setInterval(generateFact, 3500); 
+      }
+
       // Call the function to load patch notes when the page loads
       loadPatchNotes();
+      // Call the function to update fun facts automatically
+      updateFunFactAutomatically();
     </script>
   </div>
 </body>
