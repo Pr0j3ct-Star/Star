@@ -158,7 +158,7 @@
 
     <script>
       function loadPatchNotes() {
-        fetch('patch_notes.json')
+        fetch('patch-notes.json')
           .then(response => response.json())
           .then(data => {
             const patchNotesContainer = document.getElementById('patch-notes');
