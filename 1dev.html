@@ -150,32 +150,50 @@
         </div>
       </div>
     </div>
-    <div class="patch-notes">
-      <h2>Updates</h2>
-      <div class="patch-table">
-        <table>
-          <tr>
-            <th>Date</th>
-            <th>Current Version</th>
-            <th>Changes</th>
-          </tr>
-          <tr>
-            <td>February 12th</td>
-            <td>3.0.7.1</td>
-            <td>
-              <ul>
-                <li><span class="red-text">[-] </span>Removed Cube Runners Since They Banned Me</li>
-                <li><span class="green-text">[+] </span>fixed minecraft since vercel took down my shit </li>
-              </ul>
-            </td>
-          </tr>
-        </table>
-      </div>
+    <div class="patch-notes" id="patch-notes">
+      <!-- Patch notes will be inserted here -->
     </div>
 
     <audio id="pageLoadAudio" src="ah.mp3" preload="auto"></audio>
 
     <script>
+      function loadPatchNotes() {
+        fetch('patch_notes.json')
+          .then(response => response.json())
+          .then(data => {
+            const patchNotesContainer = document.getElementById('patch-notes');
+            const table = document.createElement('table');
+            table.classList.add('patch-table');
+
+            const tableHeader = document.createElement('tr');
+            tableHeader.innerHTML = `
+              <th>Date</th>
+              <th>Current Version</th>
+              <th>Changes</th>
+            `;
+            table.appendChild(tableHeader);
+
+            data.forEach(patchNote => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${patchNote.date}</td>
+                <td>${patchNote.version}</td>
+                <td>
+                  <ul>
+                    ${patchNote.changes.map(change => `<li>${change}</li>`).join('')}
+                  </ul>
+                </td>
+              `;
+              table.appendChild(row);
+            });
+
+            patchNotesContainer.appendChild(table);
+          })
+          .catch(error => {
+            console.error('Error fetching patch notes:', error);
+          });
+      }
+
       const funFacts = [
         "Developer Fun Fact:ChatGPT is actually the main developer since im stupid as shit to code everythin",
         "Developer Fun Fact: Only 4 people have Developer Panel",
@@ -196,6 +214,9 @@
         setInterval(generateFact, 8000); // Change the interval (in milliseconds) as needed
       }
 
+      // Call the function to load patch notes when the page loads
+      loadPatchNotes();
+      // Call the function to update fun facts automatically
       updateFunFactAutomatically();
     </script>
   </div>
