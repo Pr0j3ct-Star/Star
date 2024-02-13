@@ -1,20 +1,21 @@
 [
     {
       "date": "February 12th",
-      "version": "3.0.8",
+      "version": "3.0.9",
       "changes": [
-        "Recoded Patch Notes...",
-        "Tracking to see when the site is used."
+        "Updated Staff Page with more staff",
+        "found out the site bypasses goguardian somehow?",
+        "idk how but i saw ta"
         
       ]
     },
     {
       "date": "February 10th",
-      "version": "3.0.7.1",
+      "version": "3.0.8",
       "changes": [
-        "fixed minecraft",
-        "cube runners removed",
-        "idk what else"
+        "Recoded Patch notes",
+        "Tracking to see when the site is used."
+        
       ]
     }
     
