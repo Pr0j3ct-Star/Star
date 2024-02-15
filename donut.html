@@ -8,7 +8,7 @@
   /* Style to make the background dark */
   body {
     background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    color: white; /* White text */
     font-family: monospace; /* Ensures consistent font rendering for the ASCII art */
   }
 
@@ -30,6 +30,22 @@
     display: none;
     max-width: 100%; /* Ensure image does not exceed container width */
   }
+
+  /* Rainbow animation */
+  @keyframes rainbow {
+    0% { color: #ff0000; } /* Red */
+    16.666% { color: #ff8000; } /* Orange */
+    33.333% { color: #ffff00; } /* Yellow */
+    50% { color: #00ff00; } /* Green */
+    66.666% { color: #0000ff; } /* Blue */
+    83.333% { color: #4b0082; } /* Indigo */
+    100% { color: #800080; } /* Violet */
+  }
+
+  /* Apply the rainbow animation to pre element */
+  pre {
+    animation: rainbow 7s infinite; /* Repeat the animation infinitely over 7 seconds */
+  }
 </style>
 </head>
 <body>
@@ -39,19 +55,16 @@
     Your browser does not support the audio tag.
   </audio>
   
-  <p>song by jogeir ililijedahi or however the fuck you spell his name</p>
+
   <!-- Button to toggle image visibility -->
   <a href="4.html" class="button">Return</a>
 
   <!-- Image to be toggled -->
   <img id="toggleImage" src="end.png" alt="Image">
 
-
-
   <pre id="animationOutput"></pre> <!-- This pre tag will hold the output of the animation -->
 
 <script>
-
   // Place your JavaScript animation logic here
   let A = 0, B = 0, M = Math;
 
