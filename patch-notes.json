@@ -1,11 +1,21 @@
 [
     {
-      "date": "February 12th",
+      "date": "February 14th",
+      "version": "3.0.9 Patch 1",
+      "changes": [
+        "One Patch before i take a break...",
+        "Fixed buttons that needed a fix [outspect and 1v1.lol]."
+        
+        
+      ]
+    },
+    {
+      "date": "February 10th",
       "version": "3.0.9",
       "changes": [
-        "Updated Staff Page with more staff",
-        "found out the site bypasses goguardian somehow?",
-        "idk how but i saw ta"
+        "Recoded Patch notes",
+        "found out the website bypasses goguardian website blocking????",
+        "idk how but it just bypassed goguardian on precision client"
         
       ]
     },
@@ -18,6 +28,5 @@
         
       ]
     }
-    
   ]
   
