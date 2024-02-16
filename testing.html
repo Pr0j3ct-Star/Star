@@ -85,10 +85,14 @@
         }
 
         .user-selector {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
+    display: flex;
+    flex-direction: column; /* Change flex-direction to column */
+    align-items: center; /* Center the items horizontally */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 300px; /* Set a maximum height to enable scrolling */
+    margin-bottom: 10px;
+}
+
 
         .user-profile {
             margin: 0 10px;
