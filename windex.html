@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Chaos</title>
+</head>
+<body>
+    <h1>Please allow about:blank or site won't work!</h1>
+    <a href="login.html" class="button">PRESS HERE IF UR USING WINDOWS CLIENT!111 </a>
+
+    <!-- Your script goes here -->
+    <script>
+        function openGame() {
+            var win = window.open();
+            var url = "login.html";
+            var iframe = win.document.createElement('iframe');
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.src = url;
+
+            // Check if the iframe is loaded successfully
+            iframe.onload = function() {
+                // Check if the content is blocked
+                if (iframe.contentDocument && iframe.contentDocument.body.innerHTML.includes("ERR_BLOCKED_BY_CLIENT")) {
+                    alert("Content blocked by client!");
+                    win.close(); // Close the window if blocked
+                } else {
+                    // Redirect to another website after the script is done
+                    window.location.href = "https://fbi.gov";
+                }
+            };
+
+            win.document.body.appendChild(iframe);
+        }
+
+        // Automatically open the game when the page loads
+        window.onload = function() {
+            openGame();
+        };
+    </script>
+</body>
+</html>
