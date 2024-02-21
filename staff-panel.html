@@ -23,6 +23,7 @@
       border-radius: 10px;
       background-color: #000;
       box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+      position: relative;
     }
 
     .title {
@@ -115,6 +116,23 @@
     .terminal-output {
       color: #0F0;
     }
+
+    /* Moving text animation */
+    @keyframes moveText {
+      from {
+        left: 0;
+      }
+      to {
+        left: calc(100% - 200px); /* Adjust as needed */
+      }
+    }
+
+    .moving-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: moveText 10s linear forwards; /* Adjust duration as needed */
+    }
   </style>
 </head>
 <body>
@@ -152,6 +170,9 @@
     <!-- Add audio element for staff-panel.mp3 -->
     <audio id="pageLoadAudio" src="chill.mp3" preload="auto"></audio>
 
+    <!-- Moving text -->
+    <div class="moving-text">Playing: staff-panel.mp3 by ricepot</div>
+
     <script>
       const funFacts = [
         "Fun Fact: 50% of this website was coded with ChatGPT because I'm stupid.",
@@ -179,7 +200,7 @@
         
         // Play the audio
         document.getElementById('pageLoadAudio').play();
-      }, 0); // Change the time duration as needed (in milliseconds)
+      }, 10000); // Change the time duration as needed (in milliseconds)
     </script>
   </div>
 </body>
