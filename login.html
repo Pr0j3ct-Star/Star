@@ -132,7 +132,7 @@
             { username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false, terminated: false },
             { username: 'aiden', password: 'coderre', isDeveloper: true, banned: false, deactivated: false, terminated: false },
             { username: 'YourLocalCornStar', password: 'cornhub', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: true, banned: true, deactivated: false, terminated: false },
             { username: 'jacob', password: '1', isDeveloper: false, banned: false, deactivated: false, terminated: false },
             { username: 'mexican man taco muncher', password: 'border hopper', isDeveloper: false, banned: false, deactivated: false, terminated: false },
             { username: 'oliver', password: 'birtcher', isDeveloper: false, banned: false, deactivated: false, terminated: false },
@@ -173,7 +173,7 @@
                 if (user.terminated) {
                     appendMessage("Your Account has permanently terminated.You have lost access to pr0j3ct-ch4os. Contact projectchaos170 for more info. ");
                 } else if (user.banned) {
-                    appendMessage("Did you really just get banned? Skill issue. Contact projectchaos170@gmail.com to get unbanned.");
+                    appendMessage("Banned for 1 day.");
                 } else if (user.deactivated) {
                     appendMessage("Your account has been deactivated. Contact projectchaos170@gmail.com to request activation");
                 } else {
