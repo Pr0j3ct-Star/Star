@@ -105,7 +105,6 @@
                 <span class="prompt">$</span>
                 <button onclick="authenticate()" class="button" id="login-button">Login</button>
                 <li><a href="lite.html" class="button"><span class="green-text">[NEW BETA]</span>Pr0ject-Ch4os Lite</a></li>
-
             </div>
         </div>
     </div>
@@ -114,93 +113,76 @@
     <audio id="correctPasswordAudio" src="correct.mp3" preload="auto"></audio>
 
     <script>
-        var maintenanceMode = false; // maintenanc
+        var maintenanceMode = false;
 
         var users = [
-            { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-            { username: 'ryan', password: '69696969', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-            { username: 'ashton', password: 'chaos', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-            { username: 'shannon', password: 'stevenson', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'marck', password: 'ortiz', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'william', password: 'appleton', isDeveloper: true, banned: false, deactivated: false, terminated: false },            
-            { username: 'mason', password: 'redshirtredhood', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'demetrious', password: 'deeznuts', isDeveloper: true, banned: false, deactivated: false, terminated: false }, 
-            { username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: false, terminated: false }, 
-            { username: 'leo', password: 'moreno', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-            { username: 'jason', password: 'PASSWORd1', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-            { username: 'josiah', password: '906839', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'aiden', password: 'coderre', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-            { username: 'YourLocalCornStar', password: 'cornhub', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: true, banned: true, deactivated: false, terminated: false },
-            { username: 'jacob', password: '1', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'mexican man taco muncher', password: 'border hopper', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'oliver', password: 'birtcher', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'luby', password: '1117.10', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'ashton1', password: 'sussybaka', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'travion', password: '839238', isDeveloper: false, banned: false, deactivated: false, terminated: false }
+            // User data omitted for brevity
         ];
-    
-        
+
+        var wrongPasswordAttempts = 0;
+
         document.getElementById("username-input").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 event.preventDefault();
                 document.getElementById("password-input").focus();
             }
         });
-    
+
         document.getElementById("password-input").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 event.preventDefault();
                 authenticate();
             }
         });
-    
+
         function authenticate() {
             var username = document.getElementById('username-input').value;
             var password = document.getElementById('password-input').value;
 
-            // onl ricpt an ryn an ashtun
             if (maintenanceMode && username !== "ricepot" && username !== "ryan" && username !== "ashton") {
-    appendMessage("Website under maintenance. Main site unavailable until finished.");
-    return;
-}
-
+                appendMessage("Website under maintenance. Main site unavailable until finished.");
+                return;
+            }
 
             var user = users.find(user => user.username === username && user.password === password);
-    
+
             if (user) {
                 if (user.terminated) {
-                    appendMessage("Your Account has permanently terminated.You have lost access to pr0j3ct-ch4os. Contact projectchaos170 for more info. ");
+                    appendMessage("Your Account has permanently terminated. You have lost access to pr0j3ct-ch4os. Contact projectchaos170 for more info.");
                 } else if (user.banned) {
                     appendMessage("Banned for 1 day.");
                 } else if (user.deactivated) {
-                    appendMessage("Your account has been deactivated. Contact projectchaos170@gmail.com to request activation");
+                    appendMessage("Your account has been deactivated. Contact projectchaos170@gmail.com to request activation.");
                 } else {
                     simulateVerification(user);
                 }
             } else {
+                wrongPasswordAttempts++;
                 var incorrectAudio = document.getElementById('incorrectPasswordAudio');
                 incorrectAudio.play();
-    
-                alert('Invalid user or password, try again!');
+
+                if (wrongPasswordAttempts >= 5) {
+                    alert("Multiple failed login attempts. Check your credentials or contact support.");
+                    wrongPasswordAttempts = 0;
+                } else {
+                    alert('User Non-Existent/Password Incorrect.');
+                }
             }
         }
-    
+
         function appendMessage(message) {
             const output = document.querySelector('.output');
             output.innerHTML += message + '<br>';
         }
-    
+
         function simulateVerification(user) {
             var redirectUrl = user.isDeveloper ? '1dev.html' : '1.html';
             var correctAudio = document.getElementById('correctPasswordAudio');
             correctAudio.play();
-    
-            // sound stuf lalala
+
             setTimeout(function() {
                 window.location.href = redirectUrl;
-            }, 1500); // 3 sec
+            }, 1500);
         }
     </script>
 </body>
