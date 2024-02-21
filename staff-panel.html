@@ -136,37 +136,37 @@
       </div>
       <div class="box">
         <h2>Private Proxy List</h2>
-        <p>Private Proxy List since half of the proxys got blocked</p>
+        <p>Private Proxy List since half of the proxies got blocked</p>
         <a href="proxy.html" class="button">Proxy List</a>
       </div>
       <div class="box">
-        <h2>Developer Ban Dashboard [NOT WORKING]</h2>
-        <p>Submit someone to ban.</p>
+        <h2>Precision client</h2>
+        <p>will bypass goguardian</p>
+        <h3 id="loadingText">Bypassing GoGuardian Blocking...</h3>
+        <p id="loadingDescription">Loading...</p>
         <div>
-          <a href="ban-panel.html" class="button">request ban</a>
+          <a href="https://precisionclient-88k.pages.dev" class="button" id="precisionClientLink" style="display: none;">Go Guardian Bypass</a>
         </div>
       </div>
     </div>
     
-      
-
     <audio id="pageLoadAudio" src="ah.mp3" preload="auto"></audio>
 
     <script>
       const funFacts = [
-        "Fun Fact:50% of this website was coded with ChatGPT,because im stupid",
+        "Fun Fact: 50% of this website was coded with ChatGPT because I'm stupid.",
         "Fun Fact: The Creator is very stinky!!1",
-        "Fun Fact:This website is hosted using vercel cuz its faster at updating ",
-        "Fun Fact: Apparently the website is about 276 KB. Mainly Because it just redirects to another website, the emulator is about 576MB",
-        "Fun Fact: I commited multiple crimes in a gated community :)",
-        "Fun Fact: I worked on this site when i was in 6th grade, now look at it! what a beauty",
-        "Fun Fact: If your reading this you like kissing men in the lips with tongue",
-        "Fun Fact: Your gay!11111",
+        "Fun Fact: This website is hosted using Vercel because it's faster at updating.",
+        "Fun Fact: Apparently the website is about 276 KB. Mainly because it just redirects to another website, the emulator is about 576MB.",
+        "Fun Fact: I committed multiple crimes in a gated community :)",
+        "Fun Fact: I worked on this site when I was in 6th grade, now look at it! What a beauty.",
+        "Fun Fact: If you're reading this you like kissing men on the lips with tongue.",
+        "Fun Fact: You're gay!11111",
         "Fun Fact: A pirate's hands are always clammy!",
-        "Fun Fact: If Tomatoes are fruits, would ketchup be a smoothie?",
-        "Fun Fact: Did you know? Geico can save you 15% or more on car insurance",
-        "Fun Fact: Did you know? 1981 was the year that-AAAAAAAAAAAAAAAAAAA",
-        "Fun fact: Mayonaise is indeed an instrument"
+        "Fun Fact: If tomatoes are fruits, would ketchup be a smoothie?",
+        "Fun Fact: Did you know? Geico can save you 15% or more on car insurance.",
+        "Fun Fact: Did you know? 1981 was the year that - AAAAAAAAAAAAAAAAAAA!",
+        "Fun Fact: Mayonnaise is indeed an instrument."
       ];
 
       function generateFact() {
@@ -183,6 +183,12 @@
       }
 
       updateFunFactAutomatically();
+
+      setTimeout(function() {
+        document.getElementById('loadingText').innerText = 'Almost finished...';
+        document.getElementById('loadingDescription').innerText = 'Precision Client is almost loaded!';
+        document.getElementById('precisionClientLink').style.display = 'inline-block';
+      }, 3000); // Change the time duration as needed (in milliseconds)
     </script>
   </div>
 </body>
