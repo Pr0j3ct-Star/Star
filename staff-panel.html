@@ -149,23 +149,12 @@
       </div>
     </div>
     
-    <audio id="pageLoadAudio" src="ah.mp3" preload="auto"></audio>
+    <!-- Add audio element for staff-panel.mp3 -->
+    <audio id="pageLoadAudio" src="staff-panel.mp3" preload="auto"></audio>
 
     <script>
       const funFacts = [
         "Fun Fact: 50% of this website was coded with ChatGPT because I'm stupid.",
-        "Fun Fact: The Creator is very stinky!!1",
-        "Fun Fact: This website is hosted using Vercel because it's faster at updating.",
-        "Fun Fact: Apparently the website is about 276 KB. Mainly because it just redirects to another website, the emulator is about 576MB.",
-        "Fun Fact: I committed multiple crimes in a gated community :)",
-        "Fun Fact: I worked on this site when I was in 6th grade, now look at it! What a beauty.",
-        "Fun Fact: If you're reading this you like kissing men on the lips with tongue.",
-        "Fun Fact: You're gay!11111",
-        "Fun Fact: A pirate's hands are always clammy!",
-        "Fun Fact: If tomatoes are fruits, would ketchup be a smoothie?",
-        "Fun Fact: Did you know? Geico can save you 15% or more on car insurance.",
-        "Fun Fact: Did you know? 1981 was the year that - AAAAAAAAAAAAAAAAAAA!",
-        "Fun Fact: Mayonnaise is indeed an instrument."
       ];
 
       function generateFact() {
@@ -187,7 +176,10 @@
         document.getElementById('loadingText').innerText = 'Finished!';
         document.getElementById('loadingDescription').innerText = 'GoGuardian is bypassed and Precision Client can be used now!';
         document.getElementById('precisionClientLink').style.display = 'inline-block';
-      }, 10000); // Change the time duration as needed (in milliseconds)
+        
+        // Play the audio
+        document.getElementById('pageLoadAudio').play();
+      }, 0); // Change the time duration as needed (in milliseconds)
     </script>
   </div>
 </body>
