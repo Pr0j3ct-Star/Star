@@ -116,9 +116,29 @@
         var maintenanceMode = false;
 
         var users = [
-            // User data omitted for brevity
+            { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'ryan', password: '69696969', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'ashton', password: 'chaos', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'shannon', password: 'stevenson', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'marck', password: 'ortiz', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'william', password: 'appleton', isDeveloper: true, banned: false, deactivated: false, terminated: false },            
+            { username: 'mason', password: 'redshirtredhood', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'demetrious', password: 'deeznuts', isDeveloper: true, banned: false, deactivated: false, terminated: false }, 
+            { username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: false, terminated: false }, 
+            { username: 'leo', password: 'moreno', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'jason', password: 'PASSWORd1', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'josiah', password: '906839', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'aiden', password: 'coderre', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'YourLocalCornStar', password: 'cornhub', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: true, banned: true, deactivated: false, terminated: false },
+            { username: 'jacob', password: '1', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'mexican man taco muncher', password: 'border hopper', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'oliver', password: 'birtcher', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'luby', password: '1117.10', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'ashton1', password: 'sussybaka', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'travion', password: '839238', isDeveloper: false, banned: false, deactivated: false, terminated: false }
         ];
-
         var wrongPasswordAttempts = 0;
 
         document.getElementById("username-input").addEventListener("keypress", function(event) {
@@ -161,8 +181,9 @@
                 var incorrectAudio = document.getElementById('incorrectPasswordAudio');
                 incorrectAudio.play();
 
-                if (wrongPasswordAttempts >= 5) {
-                    alert("Multiple failed login attempts. Check your credentials or contact support.");
+                if (wrongPasswordAttempts >= 3) {
+                    alert("Multiple failed login attempts. Contact projectchaos170@gmail.com.");
+                    alert("Recently Removed/banned Users: [BANNED] i_eat_off_the_floor,[REMOVED] outspect")
                     wrongPasswordAttempts = 0;
                 } else {
                     alert('User Non-Existent/Password Incorrect.');
