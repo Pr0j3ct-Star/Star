@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pr0j3ct-Ch4os</title>
 <style>
-  /* Style to make the background dark */
+  
   body {
-    background-color: #000; /* Black background */
-    color: white; /* White text */
-    font-family: monospace; /* Ensures consistent font rendering for the ASCII art */
+    background-color: #000; 
+    color: white; 
+    font-family: monospace; 
   }
 
-  /* Style for the button */
+  
   .button {
     display: inline-block;
     padding: 10px 20px;
@@ -25,47 +25,47 @@
     animation: gradientShift 5s infinite linear;
   }
 
-  /* Hide the image by default */
+  
   #toggleImage {
     display: none;
-    max-width: 100%; /* Ensure image does not exceed container width */
+    max-width: 100%; 
   }
 
-  /* Rainbow animation */
+  
   @keyframes rainbow {
-    0% { color: #ff0000; } /* Red */
-    16.666% { color: #ff8000; } /* Orange */
-    33.333% { color: #ffff00; } /* Yellow */
-    50% { color: #00ff00; } /* Green */
-    66.666% { color: #0000ff; } /* Blue */
-    83.333% { color: #4b0082; } /* Indigo */
-    100% { color: #800080; } /* Violet */
+    0% { color: #ff0000; } 
+    16.666% { color: #ff8000; } 
+    33.333% { color: #ffff00; } 
+    50% { color: #00ff00; } 
+    66.666% { color: #0000ff; } 
+    83.333% { color: #4b0082; } 
+    100% { color: #800080; } 
   }
 
-  /* Apply the rainbow animation to pre element */
+  
   pre {
-    animation: rainbow 7s infinite; /* Repeat the animation infinitely over 7 seconds */
+    animation: rainbow 7s infinite; 
   }
 </style>
 </head>
 <body>
-  <!-- Audio element for background music -->
+  
   <audio id="bgMusic" autoplay loop>
     <source src="donut.mp3" type="audio/mpeg">
     Your browser does not support the audio tag.
   </audio>
   
 
-  <!-- Button to toggle image visibility -->
+  
   <a href="4.html" class="button">Return</a>
 
-  <!-- Image to be toggled -->
+  
   <img id="toggleImage" src="end.png" alt="Image">
 
-  <pre id="animationOutput"></pre> <!-- This pre tag will hold the output of the animation -->
+  <pre id="animationOutput"></pre> 
 
 <script>
-  // Place your JavaScript animation logic here
+  
   let A = 0, B = 0, M = Math;
 
   const asciiframe = () => {
@@ -102,16 +102,16 @@
             }
         }
     }
-    document.getElementById('animationOutput').innerText = b.join(""); // Output the result to the pre tag
+    document.getElementById('animationOutput').innerText = b.join(""); 
   };
 
-  const intervalId = setInterval(asciiframe, 50); // Animation interval of 50 milliseconds
+  const intervalId = setInterval(asciiframe, 50); 
 
-  // Optionally, you can stop the animation and reload the page if the music stops playing
+  
   const bgMusic = document.getElementById('bgMusic');
   bgMusic.addEventListener('ended', () => {
-    clearInterval(intervalId); // Stop the animation
-    location.reload(); // Reload the page
+    clearInterval(intervalId); 
+    location.reload(); 
   });
 </script>
 </body>
