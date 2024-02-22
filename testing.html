@@ -202,23 +202,31 @@
             }, 1500); // 3 sec
         }
 
-        function sendNotificationToDiscord(username) {
-            var webhookUrl = 'https://discord.com/api/webhooks/1210053841937244210/n_jRiabM7tu9H7SM8mD260jCEKWoW9EyXkc2Ipyrz9TSyfmn1-nD6V--Fk6esDTzHHpv';
-            var message = 'User ' + username + ' logged in.';
-            var payload = {
-                content: message
-            };
+        function sendNotificationToDiscord(username, banned) {
+    var webhookUrl = 'https://discord.com/api/webhooks/1210053841937244210/n_jRiabM7tu9H7SM8mD260jCEKWoW9EyXkc2Ipyrz9TSyfmn1-nD6V--Fk6esDTzHHpv';
+    var message = '';
+    
+    if (banned) {
+        message = 'Banned user ' + username + ' tried to log in but he got ratioed lmao';
+    } else {
+        message = 'wooooooo ' + username + ' logged in to project chaos';
+    }
+    
+    var payload = {
+        content: message
+    };
 
-            fetch(webhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            })
-            .then(response => console.log('Notification sent to Discord'))
-            .catch(error => console.error('Error sending notification to Discord:', error));
-        }
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => console.log('Notification sent to Discord'))
+    .catch(error => console.error('Error sending notification to Discord:', error));
+}
+
     </script>
 </body>
 </html>
