@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link id="favicon" rel="icon" href="https://i.scdn.co/image/ab67616d00001e02b8b42a17e0e8779dcb3773ce" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log on into Project Chaos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: rgb(17, 0, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .terminal {
+            background-color: #000;
+            border: 2px solid rgb(0, 55, 255);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .terminal:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 1);
+        }
+
+        .dark-mode-textbox {
+            padding: 10px;
+            border: 1px solid rgb(0, 17, 255);
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+            background-color: #000;
+            color: rgb(25, 0, 255);
+            outline: none;
+            transition: border-color 0.3s, background-color 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .dark-mode-textbox::placeholder {
+            color: rgb(0, 42, 255);
+        }
+
+        .dark-mode-textbox:focus {
+            border-color: #00F;
+            background-color: #111;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #00F;
+            color: rgb(0, 64, 255);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #0FF;
+            transform: scale(1.05);
+        }
+
+        .output {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .prompt {
+            color: rgb(21, 0, 255);
+            margin-right: 5px;
+        }
+
+        .user-selector {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    overflow-y: auto; 
+    max-height: 300px; 
+    margin-bottom: 10px;
+}
+
+
+        .user-profile {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .user-profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .box {
+            background-color: #111111;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(1, 33, 75, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pr0j3ct-Ch4os</h1>
+        <h2>Login now before I take your food</h2>
+        <div class="terminal">
+            <div class="output"></div>
+            <div class="user-selector">
+                <div class="box"><div class="user-profile" onclick="selectUser('ricepot')"><img src="avatars/ricepot.png" alt="Ricepot"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('ryan')"><img src="avatars/ryan.jpeg" alt="Ryan"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('ashton')"><img src="avatars/ashton.jpg" alt="Ashton"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('shannon')"><img src="avatars/shannon.png" alt="Shannon"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('marck')"><img src="avatars/marck.png" alt="Marck"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('william')"><img src="avatars/will.png" alt="William"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('mason')"><img src="avatars/mason.png" alt="Mason"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('demetrious')"><img src="avatars/demetrious.jpg" alt="Demetrious"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('cade')"><img src="avatars/cade.jpg" alt="Cade"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('leo')"><img src="avatars/leo.jpeg" alt="Leo"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('jason')"><img src="avatars/jason.jpg" alt="Jason"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('josiah')"><img src="avatars/josiah.jpg" alt="Josiah"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('goober')"><img src="avatars/goober.jpg" alt="Goober"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('aiden')"><img src="avatars/aiden.jpg" alt="Aiden"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('YourLocalCornStar')"><img src="avatars/corn.jpeg" alt="YourLocalCornStar"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('i_eat_off_the_floor')"><img src="avatars/floor.jpg" alt="I Eat Off The Floor"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('jacob')"><img src="avatars/jacob.jpg" alt="Jacob"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('mexican_man_taco_muncher')"><img src="avatars/mexican.jpg" alt="Darren"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('oliver')"><img src="avatars/oliver.jpg" alt="Oliver"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('luby')"><img src="avatars/luby.png" alt="Luby"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('ashton1')"><img src="avatars/ashton1.jpg" alt="Ashton1"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('travion')"><img src="avatars/travion.jpg" alt="Travion"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('outspect')"><img src="avatars/outspect.png" alt="Outspect"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('foolscoda')"><img src="avatars/foolscoda.png" alt="foolscoda"></div></div>
+            
+            </div>
+            <div class="input">
+                <span class="prompt">$</span>
+                <input type="password" id="password-input" class="dark-mode-textbox" placeholder="Enter your password.">
+            </div>
+            <div class="input">
+                <span class="prompt">$</span>
+                <button onclick="authenticate()" class="button" id="login-button">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var selectedUser = '';
+
+        function selectUser(username) {
+            selectedUser = username;
+            document.getElementById('password-input').focus();
+        }
+
+        var maintenanceMode = true;
+
+        var users = [
+            { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'ryan', password: '69696969', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'ashton', password: 'chaos', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'shannon', password: 'stevenson', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'marck', password: 'ortiz', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'william', password: 'appleton', isDeveloper: true, banned: false, deactivated: false, terminated: false },            
+            { username: 'mason', password: 'redshirtredhood', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'demetrious', password: 'deeznuts', isDeveloper: true, banned: false, deactivated: false, terminated: false }, 
+            { username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: false, terminated: false }, 
+            { username: 'leo', password: 'moreno', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'jason', password: 'PASSWORd1', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'josiah', password: '906839', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'aiden', password: 'coderre', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'YourLocalCornStar', password: 'cornhub', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'jacob', password: '1', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'mexican man taco muncher', password: 'border hopper', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'oliver', password: 'birtcher', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'luby', password: '1117.10', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'ashton1', password: 'sussybaka', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'travion', password: '839238', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'outspect', password: 'moonbuddies', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'foolscoda', password: 'eagler', isDeveloper: true, banned: false, deactivated: false, terminated: false }
+        ];
+
+        document.getElementById("password-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                authenticate();
+            }
+        });
+
+        function authenticate() {
+            var password = document.getElementById('password-input').value;
+
+            if (selectedUser === '') {
+                alert('Please select a user.');
+                return;
+            }
+
+            var user = users.find(user => user.username === selectedUser && user.password === password);
+
+            if (user) {
+                if (user.terminated) {
+                    appendMessage("Your Account has permanently terminated. You have lost access to pr0j3ct-ch4os. Contact projectchaos170 for more info.");
+                } else if (user.banned) {
+                    appendMessage("Did you really just get banned? Skill issue. Contact projectchaos170@gmail.com to get unbanned.");
+                } else if (user.deactivated) {
+                    appendMessage("Your account has been deactivated. Contact projectchaos170@gmail.com to request activation");
+                } else {
+                    simulateVerification(user);
+                }
+            } else {
+                var incorrectAudio = new Audio('password.mp3');
+                incorrectAudio.play();
+
+                alert('Invalid user or password, try again!');
+            }
+        }
+
+        function appendMessage(message) {
+            const output = document.querySelector('.output');
+            output.innerHTML += message + '<br>';
+        }
+
+        function simulateVerification(user) {
+            var redirectUrl = user.isDeveloper ? '1dev.html' : '1.html';
+            var correctAudio = new Audio('correct.mp3');
+            correctAudio.play();
+
+            setTimeout(function() {
+                window.location.href = redirectUrl;
+            }, 1500); // 3 sec
+        }
+    </script>
+</body>
+</html>
