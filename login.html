@@ -270,9 +270,16 @@
         },
         body: JSON.stringify(payload)
     })
-    .then(response => console.log('Notification sent to Discord'))
-    .catch(error => console.error('Error sending notification to Discord:', error));
+    .then(response => {
+        if(response.ok) {
+            console.log('Notification sent to Discord');
+        } else {
+            throw new Error('Failed to send notification to Discord');
+        }
+    })
+    .catch(error => alert('Failed to connect to Pr0j3ct-ch4os API, Please contact support.: ' + error.message));
 }
+
 
     </script>
 </body>
