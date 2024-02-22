@@ -4,7 +4,6 @@
     <link id="favicon" rel="icon" href="https://i.scdn.co/image/ab67616d00001e02b8b42a17e0e8779dcb3773ce" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesbeta.css">
     <title>Log on into Project Chaos</title>
     <style>
         body {
@@ -84,18 +83,71 @@
             color: rgb(21, 0, 255);
             margin-right: 5px;
         }
+
+        .user-selector {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            overflow-y: auto; 
+            max-height: 300px; 
+            margin-bottom: 10px;
+        }
+
+        .user-profile {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .user-profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .box {
+            background-color: #111111;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            flex: 1;
+            max-width: 300px;
+            box-shadow: 0 0 10px rgba(1, 33, 75, 0.5);
+        }
     </style>
 </head>
 <body>
-    <a href="testing.html" class="button" style="position: absolute; top: 0; left: 0;">Login System Recode Testing!</a>
     <div class="container">
         <h1>Pr0j3ct-Ch4os</h1>
-        <h2>Login now before i take your food</h2>
+        <h2>Login now before I take your food</h2>
         <div class="terminal">
             <div class="output"></div>
-            <div class="input">
-                <span class="prompt">$</span>
-                <input type="text" id="username-input" class="dark-mode-textbox" placeholder="Enter your user.">
+            <div class="user-selector">
+                <div class="box"><div class="user-profile" onclick="selectUser('ricepot')"><img src="avatars/ricepot.png" alt="Ricepot"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('ryan')"><img src="avatars/ryan.jpeg" alt="Ryan"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('ashton')"><img src="avatars/ashton.jpg" alt="Ashton"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('shannon')"><img src="avatars/shannon.png" alt="Shannon"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('marck')"><img src="avatars/marck.png" alt="Marck"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('william')"><img src="avatars/will.png" alt="William"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('mason')"><img src="avatars/mason.png" alt="Mason"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('demetrious')"><img src="avatars/demetrious.jpg" alt="Demetrious"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('cade')"><img src="avatars/cade.jpg" alt="Cade"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('leo')"><img src="avatars/leo.jpeg" alt="Leo"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('jason')"><img src="avatars/jason.jpg" alt="Jason"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('josiah')"><img src="avatars/josiah.jpg" alt="Josiah"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('goober')"><img src="avatars/goober.jpg" alt="Goober"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('aiden')"><img src="avatars/aiden.jpg" alt="Aiden"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('YourLocalCornStar')"><img src="avatars/corn.jpeg" alt="YourLocalCornStar"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('i_eat_off_the_floor')"><img src="avatars/floor.jpg" alt="I Eat Off The Floor"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('jacob')"><img src="avatars/jacob.jpg" alt="Jacob"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('mexican_man_taco_muncher')"><img src="avatars/mexican.jpg" alt="Darren"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('oliver')"><img src="avatars/oliver.jpg" alt="Oliver"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('luby')"><img src="avatars/luby.png" alt="Luby"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('ashton1')"><img src="avatars/ashton1.jpg" alt="Ashton1"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('travion')"><img src="avatars/travion.jpg" alt="Travion"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('outspect')"><img src="avatars/outspect.png" alt="Outspect"></div></div>
+                <div class="box"><div class="user-profile" onclick="selectUser('foolscoda')"><img src="avatars/foolscoda.png" alt="foolscoda"></div></div>
             </div>
             <div class="input">
                 <span class="prompt">$</span>
@@ -104,16 +156,17 @@
             <div class="input">
                 <span class="prompt">$</span>
                 <button onclick="authenticate()" class="button" id="login-button">Login</button>
-                <li><a href="lite.html" class="button"><span class="green-text">[NEW BETA]</span>Pr0ject-Ch4os Lite</a></li>
             </div>
         </div>
     </div>
 
-    <audio id="incorrectPasswordAudio" src="password.mp3" preload="auto"></audio>
-    <audio id="correctPasswordAudio" src="correct.mp3" preload="auto"></audio>
-
     <script>
-        var maintenanceMode = false;
+        var selectedUser = '';
+
+        function selectUser(username) {
+            selectedUser = username;
+            document.getElementById('password-input').focus();
+        }
 
         var users = [
             { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false, terminated: false },
@@ -131,22 +184,16 @@
             { username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false, terminated: false },
             { username: 'aiden', password: 'coderre', isDeveloper: true, banned: false, deactivated: false, terminated: false },
             { username: 'YourLocalCornStar', password: 'cornhub', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: true, banned: true, deactivated: false, terminated: false },
+            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: true, banned: false, deactivated: false, terminated: false },
             { username: 'jacob', password: '1', isDeveloper: false, banned: false, deactivated: false, terminated: false },
             { username: 'mexican man taco muncher', password: 'border hopper', isDeveloper: false, banned: false, deactivated: false, terminated: false },
             { username: 'oliver', password: 'birtcher', isDeveloper: false, banned: false, deactivated: false, terminated: false },
             { username: 'luby', password: '1117.10', isDeveloper: false, banned: false, deactivated: false, terminated: false },
             { username: 'ashton1', password: 'sussybaka', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-            { username: 'travion', password: '839238', isDeveloper: false, banned: false, deactivated: false, terminated: false }
+            { username: 'travion', password: '839238', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'outspect', password: 'moonbuddies', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'foolscoda', password: 'eagler', isDeveloper: true, banned: false, deactivated: false, terminated: false }
         ];
-        var wrongPasswordAttempts = 0;
-
-        document.getElementById("username-input").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                document.getElementById("password-input").focus();
-            }
-        });
 
         document.getElementById("password-input").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
@@ -156,38 +203,31 @@
         });
 
         function authenticate() {
-            var username = document.getElementById('username-input').value;
             var password = document.getElementById('password-input').value;
 
-            if (maintenanceMode && username !== "ricepot" && username !== "ryan" && username !== "ashton") {
-                appendMessage("Website under maintenance. Main site unavailable until finished.");
+            if (selectedUser === '') {
+                alert('Please select a user.');
                 return;
             }
 
-            var user = users.find(user => user.username === username && user.password === password);
+            var user = users.find(user => user.username === selectedUser && user.password === password);
 
             if (user) {
                 if (user.terminated) {
                     appendMessage("Your Account has permanently terminated. You have lost access to pr0j3ct-ch4os. Contact projectchaos170 for more info.");
                 } else if (user.banned) {
-                    appendMessage("Banned for 1 day.");
+                    appendMessage("Did you really just get banned? Skill issue. Contact projectchaos170@gmail.com to get unbanned.");
                 } else if (user.deactivated) {
-                    appendMessage("Your account has been deactivated. Contact projectchaos170@gmail.com to request activation.");
+                    appendMessage("Your account has been deactivated. Contact projectchaos170@gmail.com to request activation");
                 } else {
                     simulateVerification(user);
+                    sendNotificationToDiscord(selectedUser);
                 }
             } else {
-                wrongPasswordAttempts++;
-                var incorrectAudio = document.getElementById('incorrectPasswordAudio');
+                var incorrectAudio = new Audio('password.mp3');
                 incorrectAudio.play();
 
-                if (wrongPasswordAttempts >= 3) {
-                    alert("Multiple failed login attempts. Contact projectchaos170@gmail.com.");
-                    alert("Recently Removed/banned Users: [BANNED] i_eat_off_the_floor,[REMOVED] outspect")
-                    wrongPasswordAttempts = 0;
-                } else {
-                    alert('User Non-Existent/Password Incorrect.');
-                }
+                alert('Invalid user or password, try again!');
             }
         }
 
@@ -198,13 +238,39 @@
 
         function simulateVerification(user) {
             var redirectUrl = user.isDeveloper ? '1dev.html' : '1.html';
-            var correctAudio = document.getElementById('correctPasswordAudio');
+            var correctAudio = new Audio('correct.mp3');
             correctAudio.play();
 
             setTimeout(function() {
                 window.location.href = redirectUrl;
-            }, 1500);
+            }, 1500); // 3 sec
         }
+
+        function sendNotificationToDiscord(username, banned) {
+    var webhookUrl = 'https://discord.com/api/webhooks/1210061210880450691/xJdUz7UFnPghJjnB_AnacGQovB3RbTspmtHkNSyV23ckaPsBCfzuIFWmVatabEGYxJGY';
+    var message = '';
+    
+    if (banned) {
+        message = 'Banned user ' + username + ' tried to log in but he got ratioed lmao';
+    } else {
+        message = 'wooooooo ' + username + ' logged in to project chaos';
+    }
+    
+    var payload = {
+        content: message
+    };
+
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => console.log('Notification sent to Discord'))
+    .catch(error => console.error('Error sending notification to Discord:', error));
+}
+
     </script>
 </body>
 </html>
