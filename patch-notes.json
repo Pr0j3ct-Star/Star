@@ -12,8 +12,8 @@
     ]
   },
     {
-      "date": "February 14th",
-      "version": "3.1.0 Patch 1",
+      "date": "February 21st",
+      "version": "3.1.5 ",
       "changes": [
         "thing that notifies me on discord who logged into my site",
         "Full Recode of Login System",
