@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="stylesbeta.css">
-  <title>Project Chaos V3 Developer Panel</title>
+  <title>Project Chaos V2 Site</title>
   <style>
     body {
       font-family: 'Courier New', Courier, monospace;
@@ -23,7 +23,6 @@
       border-radius: 10px;
       background-color: #000;
       box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-      position: relative;
     }
 
     .title {
@@ -116,29 +115,17 @@
     .terminal-output {
       color: #0F0;
     }
-
-    /* Moving text animation */
-    @keyframes moveText {
-      from {
-        left: 0;
-      }
-      to {
-        left: calc(100% - 200px); /* Adjust as needed */
-      }
-    }
-
-    .moving-text {
-      position: absolute;
-      top: 0;
-      left: 0;
-      animation: moveText 10s linear forwards; /* Adjust duration as needed */
-    }
   </style>
+  
 </head>
 <body>
+  <a href="login.html" class="button" style="position: absolute; bottom: 0; left: 0;">Log Out</a>
+  <a href="dev/staff-panel.html" class="button" style="position: absolute; top: 0; left: 0;">Dev Panel</a>
+  <a href="dev/2dev.html" class="button" style="position: absolute; top: 0; right: 0;">Page 2</a>
   <div class="container">
-    <a href="1dev.html" class="button">Return</a>
-    <h1 class="title">Project Chaos V3 Developer Panel</h1>
+    
+    
+    <h1 class="title">Project Chaos V3 Site</h1>
     <p>The Ultimate Game Website.</p>
 
     <!-- Terminal -->
@@ -148,64 +135,92 @@
 
     <div class="boxes">
       <div class="box">
-        <h2>Sign Up for account form.</h2>
-        <p>The form to add someone into the site.</p>
-        <a href="https://forms.gle/riidFYs1VsN5A55b9" class="button">Form for signup.</a>
+        <h2>Pr0j3ct-ch4os Development Client</h2>
+        <p>woohoo i made a windows client for pc users </p>
+        <a href="downloadsdev.html" class="button">download</a>
       </div>
       <div class="box">
-        <h2>Private Proxy List</h2>
-        <p>Private Proxy List since half of the proxies got blocked</p>
-        <a href="proxy.html" class="button">Proxy List</a>
+        <h2>GBA EMU</h2>
+        <p>Use the Gameboy advance emulator.</p>
+        <a href="https://pr0j3ct-ch4os.github.io/core_chaos" class="button">GBA EMU</a>
       </div>
       <div class="box">
-        <h2>Precision client</h2>
-        <h3 id="loadingText">Bypassing GoGuardian Blocking...</h3>
-        <p id="loadingDescription">Loading...</p>
+        <h2>Eaglercraft</h2>
+        <p>literally just minecraft but made for chromebooks. </p>
         <div>
-          <a href="https://precisionclient-88k.pages.dev" class="button" id="precisionClientLink" style="display: none;">Precision Client</a>
+          <a href="eaglercraft.html" class="button">Eaglercraft </a>
         </div>
       </div>
     </div>
-    
-    <!-- Add audio element for staff-panel.mp3 -->
-    <audio id="pageLoadAudio" src="chill.mp3" preload="auto"></audio>
+    <div class="patch-notes" id="patch-notes">
+      <!-- Patch notes will be inserted here -->
+    </div>
 
-    <!-- Moving text -->
-    <div class="moving-text">Playing: staff-panel.mp3 by ricepot</div>
+    <audio id="pageLoadAudio" src="ah.mp3" preload="auto"></audio>
 
     <script>
+      function loadPatchNotes() {
+        fetch('patch-notes.json')
+          .then(response => response.json())
+          .then(data => {
+            const patchNotesContainer = document.getElementById('patch-notes');
+            const table = document.createElement('table');
+            table.classList.add('patch-table');
+
+            const tableHeader = document.createElement('tr');
+            tableHeader.innerHTML = `
+              <th>Date</th>
+              <th>Current Version</th>
+              <th>Changes</th>
+            `;
+            table.appendChild(tableHeader);
+
+            data.forEach(patchNote => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${patchNote.date}</td>
+                <td>${patchNote.version}</td>
+                <td>
+                  <ul>
+                    ${patchNote.changes.map(change => `<li>${change}</li>`).join('')}
+                  </ul>
+                </td>
+              `;
+              table.appendChild(row);
+            });
+
+            patchNotesContainer.appendChild(table);
+          })
+          .catch(error => {
+            console.error('Error fetching patch notes:', error);
+          });
+      }
+
       const funFacts = [
-        "Fun Fact: 50% of this website was coded with ChatGPT because I'm stupid.",
+        "Developer Fun Fact:ChatGPT is actually the main developer since im stupid as shit to code everythin",
+        "Developer Fun Fact: Only 4 people have Developer Panel",
+        "Developer Fun Fact:i need to buy a domain so its not pr0j3ct-ch4os.vercel.app, maybe make it be pr0j3ct-ch4os.org ",
+        "Developer Fun Fact:You can still access the website even when its under maintenance"
       ];
-    
+
       function generateFact() {
         const factContainer = document.getElementById("fact-container");
         const randomIndex = Math.floor(Math.random() * funFacts.length);
         const randomFact = funFacts[randomIndex];
-    
+
         factContainer.innerHTML = randomFact;
       }
-    
+
       function updateFunFactAutomatically() {
         generateFact(); // Initial fact
         setInterval(generateFact, 8000); // Change the interval (in milliseconds) as needed
       }
-    
+
+      // Call the function to load patch notes when the page loads
+      loadPatchNotes();
+      // Call the function to update fun facts automatically
       updateFunFactAutomatically();
-    
-      setTimeout(function() {
-        document.getElementById('loadingText').innerText = 'Finished!';
-        document.getElementById('loadingDescription').innerText = 'GoGuardian is bypassed and Precision Client can be used now!';
-        document.getElementById('precisionClientLink').style.display = 'inline-block';
-        
-        // Play the audio
-        document.getElementById('pageLoadAudio').play();
-        
-        // Notify Discord
-        sendNotificationToDiscord('Developer Panel', false); // Assuming the developer panel entry is not by a banned user
-      }, 0); // Change the time duration as needed (in milliseconds)
     </script>
-    
   </div>
 </body>
 </html>

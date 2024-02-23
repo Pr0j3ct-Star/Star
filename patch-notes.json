@@ -1,11 +1,11 @@
 [
   {
-    "date": "February 21st",
-    "version": "3.1.5",
+    "date": "February 23rd",
+    "version": "3.1.6",
     "changes": [
-      "thing that notifies me on discord who logged into my site",
-      "Full Recode of Login System",
-      "sponsored by bitlife so i added their game lmao"
+      "Moved some stuff around so the website may be broken at the moment",
+      "optimization stuff",
+      "37 changes [what vs-code says]"
       
       
       
@@ -15,8 +15,9 @@
       "date": "February 14th",
       "version": "3.1.0 Patch 1",
       "changes": [
-        "Precision Client Recoded",
-        "[DEVS ONLY UPDATE] Precision Client (old one) bypasses goguardian now!!!! "
+        "thing that notifies me on discord who logged into my site",
+        "Full Recode of Login System",
+        "sponsored by bitlife so i added their game lmao"
        
         
         
