@@ -86,13 +86,15 @@
 
         .user-selector {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 20px;
+            flex-direction: column; 
+            align-items: center; 
+            overflow-y: auto; 
+            max-height: 300px; 
+            margin-bottom: 10px;
         }
 
         .user-profile {
-            margin: 10px;
+            margin: 0 10px;
             cursor: pointer;
         }
 
@@ -168,34 +170,34 @@
         }
 
         var users = [
-    { userId: '1', username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-    { userId: '2', username: 'ryan', password: '69696969', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-    { userId: '3', username: 'ashton', password: 'chaos', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-    { userId: '45678', username: 'shannon', password: 'stevenson', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '56789', username: 'marck', password: 'ortiz', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '67890', username: 'william', password: 'appleton', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-    { userId: '78901', username: 'mason', password: 'redshirtredhood', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '89012', username: 'demetrious', password: 'deeznuts', isDeveloper: true, banned: false, deactivated: false, terminated: false }, 
-    { userId: '90123', username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: false, terminated: false }, 
-    { userId: '01234', username: 'leo', password: 'moreno', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-    { userId: '12340', username: 'jason', password: 'PASSWORd1', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-    { userId: '23401', username: 'josiah', password: '906839', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '34012', username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '40123', username: 'aiden', password: 'coderre', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-    { userId: '01234', username: 'YourLocalCornStar', password: 'cornhub', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '12345', username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '23456', username: 'jacob', password: '1', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '34567', username: 'mexican man taco muncher', password: 'border hopper', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '45678', username: 'oliver', password: 'birtcher', isDeveloper: false, banned: true, deactivated: false, terminated: false },
-    { userId: '56789', username: 'luby', password: '1117.10', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '67890', username: 'ashton1', password: 'sussybaka', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '78901', username: 'travion', password: '839238', isDeveloper: false, banned: false, deactivated: false, terminated: false },
-    { userId: '89012', username: 'outspect', password: 'moonbuddies', isDeveloper: true, banned: false, deactivated: false, terminated: false },
-    { userId: '90123', username: 'catory', password: '939588', isDeveloper: false, banned: false, deactivated: false, terminated: false }
-];
+            { username: 'ricepot', password: '051311a.22', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'ryan', password: '69696969', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'ashton', password: 'chaos', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'shannon', password: 'stevenson', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'marck', password: 'ortiz', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'william', password: 'appleton', isDeveloper: true, banned: false, deactivated: false, terminated: false },            
+            { username: 'mason', password: 'redshirtredhood', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'demetrious', password: 'deeznuts', isDeveloper: true, banned: false, deactivated: false, terminated: false }, 
+            { username: 'cade', password: 'a', isDeveloper: false, banned: false, deactivated: false, terminated: false }, 
+            { username: 'leo', password: 'moreno', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'jason', password: 'PASSWORd1', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'josiah', password: '906839', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'goober', password: 'clint', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'aiden', password: 'coderre', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'YourLocalCornStar', password: 'cornhub', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'i_eat_off_the_floor', password: 'skullbull6', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'jacob', password: '1', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'mexican man taco muncher', password: 'border hopper', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'oliver', password: 'birtcher', isDeveloper: false, banned: true, deactivated: false, terminated: false },
+            { username: 'luby', password: '1117.10', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'ashton1', password: 'sussybaka', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'travion', password: '839238', isDeveloper: false, banned: false, deactivated: false, terminated: false },
+            { username: 'outspect', password: 'moonbuddies', isDeveloper: true, banned: false, deactivated: false, terminated: false },
+            { username: 'catory', password: '939588', isDeveloper: false, banned: false, deactivated: false, terminated: false }
+            
+        ];
 
-
-document.getElementById("password-input").addEventListener("keypress", function(event) {
+        document.getElementById("password-input").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 event.preventDefault();
                 authenticate();
@@ -214,11 +216,12 @@ document.getElementById("password-input").addEventListener("keypress", function(
 
             if (user) {
                 if (user.terminated) {
-                    appendMessage("Your Account has permanently terminated. Contact projectchaos170@gmail.com for more info. User ID: " + user.userId);
+                    appendMessage("Your Account has permanently terminated.Contact projectchaos170@gmail.com for more info. User ID:");
+                    generateUserID();
                 } else if (user.banned) {
-                    appendMessage("Did you really just get banned? Skill issue. Contact projectchaos170@gmail.com to get unbanned. User ID: " + user.userId);
+                    appendMessage("Did you really just get banned? Skill issue. Contact projectchaos170@gmail.com to get unbanned.");
                 } else if (user.deactivated) {
-                    appendMessage("Your account has been deactivated. Contact projectchaos170@gmail.com to request activation. User ID: " + user.userId);
+                    appendMessage("Your account has been deactivated. Contact projectchaos170@gmail.com to request activation");
                 } else {
                     simulateVerification(user);
                     sendNotificationToDiscord(selectedUser);
@@ -247,8 +250,45 @@ document.getElementById("password-input").addEventListener("keypress", function(
         }
 
         function sendNotificationToDiscord(username, banned) {
-            // Function definition
+    var webhookUrl = 'https://discord.com/api/webhooks/1210061210880450691/xJdUz7UFnPghJjnB_AnacGQovB3RbTspmtHkNSyV23ckaPsBCfzuIFWmVatabEGYxJGY';
+    var message = '';
+    
+    if (banned) {
+        message = 'Banned user ' + username + ' tried to log in but he got ratioed lmao';
+    } else {
+        message = 'wooooooo ' + username + ' logged in to project chaos';
+    }
+    
+    var payload = {
+        content: message
+    };
+
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if(response.ok) {
+            console.log('Notification sent to Discord');
+        } else {
+            throw new Error('Failed to send notification to Discord');
         }
+    })
+    .catch(error => alert('Failed to connect to Pr0j3ct-ch4os API,This Doesnt affect anything. But Please contact support.: ' + error.message));
+}
+function generateUserID() {
+            let userID = '';
+            const characters = '0123456789';
+            for (let i = 0; i < 5; i++) {
+                userID += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            appendMessage(userID);
+        }
+
+
     </script>
 </body>
 </html>
