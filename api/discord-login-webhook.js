@@ -15,7 +15,7 @@ app.post('/login', (req, res) => {
         sendDiscordNotification(`User "${username}" logged in.`);
         res.send('Login successful!');
     } else {
-        res.status(401).send('Login failed!');
+        res.status(401).send('what');
     }
 });
 
