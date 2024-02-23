@@ -217,7 +217,8 @@
 
             if (user) {
                 if (user.terminated) {
-                    appendMessage("Your Account has permanently terminated.Contact projectchaos170 for more info. user id to appeal:" + userID);
+                    appendMessage("Your Account has permanently terminated.Contact projectchaos170 for more info. User ID:");
+                    generateUserID();
                 } else if (user.banned) {
                     appendMessage("Did you really just get banned? Skill issue. Contact projectchaos170@gmail.com to get unbanned.");
                 } else if (user.deactivated) {
@@ -280,13 +281,14 @@
     .catch(error => alert('Failed to connect to Pr0j3ct-ch4os API, Please contact support.: ' + error.message));
 }
 function generateUserID() {
-    let userID = '';
-    const characters = '0123456789';
-    for (let i = 0; i < 5; i++) {
-        userID += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return userID;
-}
+            let userID = '';
+            const characters = '0123456789';
+            for (let i = 0; i < 5; i++) {
+                userID += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            appendMessage(userID);
+        }
+
 
     </script>
 </body>
