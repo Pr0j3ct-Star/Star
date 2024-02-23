@@ -4,7 +4,7 @@
   <link id="favicon" rel="icon" href="https://pr0j3ct-ch4os.github.io/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="stylesbeta.css">
+  <link rel="stylesheet" href="/stylesbeta.css">
   <title>Project Chaos V2 Site</title>
   <style>
     body {
@@ -120,7 +120,7 @@
 </head>
 <body>
   
-  <a href="login.html" class="button" style="position: absolute; bottom: 0; left: 0;">Log Out</a>
+  <a href="/login.html" class="button" style="position: absolute; bottom: 0; left: 0;">Log Out</a>
   <a href="staff-panel.html" class="button" style="position: absolute; top: 0; left: 0;">Dev Panel</a>
   <a href="2dev.html" class="button" style="position: absolute; top: 0; right: 0;">Page 2</a>
   <div class="container">
@@ -136,9 +136,9 @@
 
     <div class="boxes">
       <div class="box">
-        <h2>Pr0j3ct-ch4os Development Client</h2>
-        <p>woohoo i made a windows client for pc users </p>
-        <a href="downloadsdev.html" class="button">download</a>
+        <h2>placeholderr</h2>
+        <p>placeholder </p>
+        <a href="placeholder.html" class="button">placeholder</a>
       </div>
       <div class="box">
         <h2>GBA EMU</h2>
@@ -157,11 +157,11 @@
       <!-- Patch notes will be inserted here -->
     </div>
 
-    <audio id="pageLoadAudio" src="ah.mp3" preload="auto"></audio>
+    <audio id="pageLoadAudio" src="/chill.mp3" preload="auto"></audio>
 
     <script>
       function loadPatchNotes() {
-        fetch('patch-notes.json')
+        fetch('/patch-notes.json')
           .then(response => response.json())
           .then(data => {
             const patchNotesContainer = document.getElementById('patch-notes');
