@@ -9,12 +9,12 @@ OPTIMIZATION
 To ensure you have the best experience possible, ensure to have the following
 settings enabled/disabled
 1. Graphics = Fast
-2. Render Distance = 1-5
+2. Render Distance = 4 or 5
 3. Smooth Lighting = Off
 4. Max Framerate = 60+
 5. Clouds = Off
 6. Particles = Minimal
-7. FXAA Antialiasing = ON/OFF, depends on device
+7. FXAA Antialiasing = ON/OFF, depends on device, OFF is recommended
 8. Alternate Blocks = Off
 9. Entity Shadows = Off
 10. Fog = Off
