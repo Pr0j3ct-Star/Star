@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pr0j3ct-Ch4os</title>
+<style>
+  body {
+    background-color: #312f2f; 
+    color: white; 
+    font-family: monospace; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-image: linear-gradient(45deg, rgb(96, 0, 250), rgb(115, 15, 190), rgb(57, 42, 68), rgb(48, 12, 121));
+    background-size: 400%;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+    animation: gradientShift 5s infinite linear;
+  }
+
+  #toggleImage {
+    display: none;
+    max-width: 100%; 
+  }
+
+  @keyframes rainbow {
+    0% { color: #ff0000; } 
+    16.666% { color: #ff8000; } 
+    33.333% { color: #ffff00; } 
+    50% { color: #00ff00; } 
+    66.666% { color: #0000ff; } 
+    83.333% { color: #9200fa; } 
+    100% { color: #e001e0; } 
+  }
+
+  pre {
+    animation: rainbow 3s infinite; 
+  }
+</style>
+</head>
+<body>
+  <audio id="bgMusic" autoplay loop>
+    <source src="hehe.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+  
+  <a href="4.html" class="button">Return</a>
+  <p>new music by me!!!!1111</p>
+  
+  <div class="container">
+    <pre id="animationOutput"></pre> 
+  </div>
+
+<script>
+  let A = 0, B = 0, M = Math;
+
+  const asciiframe = () => {
+    let b = [], z = [];
+    A += 0.05;
+    B += 0.07;
+    const cA = M.cos(A);
+    const sA = M.sin(A);
+    const cB = M.cos(B);
+    const sB = M.sin(B);
+
+    for (let k = 0; k < 1760; k++) {
+        b[k] = k % 80 == 79 ? "\n" : " ";
+        z[k] = 0;
+    }
+
+    for (let j = 0; j < 6.28; j += 0.07) {
+        const ct = M.cos(j);
+        const st = M.sin(j);
+
+        for (let i = 0; i < 6.28; i += 0.02) {
+            const sp = M.sin(i), cp = M.cos(i);
+            const h = ct + 2;
+            const D = 1 / (sp * h * sA + st * cA + 5);
+            const t = sp * h * cA - st * sA;
+            const x = (40 + 30 * D * (cp * h * cB - t * sB)) | 0;
+            const y = (12 + 15 * D * (cp * h * sB + t * cB)) | 0;
+            const o = x + 80 * y;
+            const N = (8 * ((st * sA - sp * ct * cA) * cB - sp * ct * sA - st * cA - cp * ct * sB)) | 0;
+
+            if (y < 22 && y >= 0 && x >= 0 && x < 79 && D > z[o]) {
+                z[o] = D;
+                b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
+            }
+        }
+    }
+    document.getElementById('animationOutput').innerText = b.join(""); 
+  };
+
+  const intervalId = setInterval(asciiframe, 6); 
+
+  const bgMusic = document.getElementById('bgMusic');
+  bgMusic.addEventListener('ended', () => {
+    clearInterval(intervalId); 
+    location.reload(); 
+  });
+</script>
+</body>
+</html>
