@@ -5,14 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pr0j3ct-Ch4os</title>
 <style>
-  
   body {
     background-color: #000; 
     color: white; 
     font-family: monospace; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
   }
 
-  
+  .container {
+    text-align: center;
+  }
+
   .button {
     display: inline-block;
     padding: 10px 20px;
@@ -25,13 +32,11 @@
     animation: gradientShift 5s infinite linear;
   }
 
-  
   #toggleImage {
     display: none;
     max-width: 100%; 
   }
 
-  
   @keyframes rainbow {
     0% { color: #ff0000; } 
     16.666% { color: #ff8000; } 
@@ -42,30 +47,24 @@
     100% { color: #800080; } 
   }
 
-  
   pre {
     animation: rainbow 7s infinite; 
   }
 </style>
 </head>
 <body>
-  
   <audio id="bgMusic" autoplay loop>
     <source src="hehe.mp3" type="audio/mpeg">
     Your browser does not support the audio tag.
   </audio>
   
-
-  
   <a href="4.html" class="button">Return</a>
-
   
-  <img id="toggleImage" src="end.png" alt="Image">
-
-  <pre id="animationOutput"></pre> 
+  <div class="container">
+    <pre id="animationOutput"></pre> 
+  </div>
 
 <script>
-  
   let A = 0, B = 0, M = Math;
 
   const asciiframe = () => {
@@ -107,7 +106,6 @@
 
   const intervalId = setInterval(asciiframe, 10); 
 
-  
   const bgMusic = document.getElementById('bgMusic');
   bgMusic.addEventListener('ended', () => {
     clearInterval(intervalId); 
