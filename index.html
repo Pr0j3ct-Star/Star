@@ -8,7 +8,7 @@
 <body>
     <h1>Please allow about:blank or site won't work!</h1>
     
-    <!-- Your script goes here -->
+    
     <script>
         function openGame() {
             var win = window.open();
@@ -18,23 +18,16 @@
             iframe.style.height = "100%";
             iframe.style.border = "none";
             iframe.src = url;
-
-            // Check if the iframe is loaded successfully
             iframe.onload = function() {
-                // Check if the content is blocked
                 if (iframe.contentDocument && iframe.contentDocument.body.innerHTML.includes("ERR_BLOCKED_BY_CLIENT")) {
                     alert("Content blocked by client!");
-                    win.close(); // Close the window if blocked
-                } else {
-                    // Redirect to another website after the script is done
-                    window.location.href = "https://fbi.gov";
+                    win.close(); 
+                } else {  
+                    window.location.href = "https://edpuzzle.com";
                 }
             };
-
             win.document.body.appendChild(iframe);
-        }
-
-        // Automatically open the game when the page loads
+        }       
         window.onload = function() {
             openGame();
         };
