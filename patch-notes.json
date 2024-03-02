@@ -1,24 +1,24 @@
 [
   {
-    "date": "February 23rd",
-    "version": "3.1.6.1",
+    "date": "March 2nd",
+    "version": "3.1.6.2",
     "changes": [
-      "Moved some stuff around so the website may be broken at the moment",
-      "optimization stuff",
-      "37 changes [what vs-code says]",
-      "fixed eaglercraft multiplayer not working"
+      "changed the font i guess",
+      "working on adding a video that plays when websit open"
+      
       
       
       
     ]
   },
     {
-      "date": "February 21st",
-      "version": "3.1.5 ",
+      "date": "February 23rd",
+      "version": "3.1.6.1 ",
       "changes": [
-        "thing that notifies me on discord who logged into my site",
-        "Full Recode of Login System",
-        "sponsored by bitlife so i added their game lmao"
+        "Moved some stuff around so the website may be broken at the moment [fixed]",
+        "optimization stuff",
+        "37 changes [what vs-code says]",
+        "fixed eaglercraft multiplayer not working"
        
         
         

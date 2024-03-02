@@ -8,13 +8,19 @@
   <title>Project Chaos V2 Site</title>
   <style>
     body {
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'VT323', monospace;
       background-color: #000;
       color: #0F0;
       margin: 0;
       padding: 0;
+      filter: blur(0.05em) brightness(150%) saturate(300%);
     }
-
+  
+    @font-face {
+      font-family: 'VT323';
+      src: url('https://fonts.gstatic.com/s/vt323/v7/pxiKyp0ihIEF2hsY4Jsm1P0vf8aO.ttf') format('truetype');
+    }
+  
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -24,11 +30,11 @@
       background-color: #000;
       box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
     }
-
+  
     .title {
       color: #0F0;
     }
-
+  
     .button {
       background-color: #00F;
       color: #0F0;
@@ -38,11 +44,11 @@
       display: inline-block;
       margin-top: 10px;
     }
-
+  
     .button:hover {
       background-color: #0FF;
     }
-
+  
     .box {
       border: 1px solid #0F0;
       padding: 20px;
@@ -50,49 +56,49 @@
       border-radius: 5px;
       background-color: #000;
     }
-
+  
     .box h2 {
       color: #0F0;
     }
-
+  
     .box p {
       color: #0F0;
     }
-
+  
     .patch-notes {
       margin-top: 20px;
     }
-
+  
     .patch-table {
       background-color: #000;
       border: 1px solid #0F0;
       border-collapse: collapse;
       width: 100%;
     }
-
+  
     .patch-table th,
     .patch-table td {
       border: 1px solid #0F0;
       padding: 8px;
       color: #0F0;
     }
-
+  
     .patch-table th {
       background-color: #00F;
     }
-
+  
     .patch-table td {
       background-color: #000;
     }
-
+  
     .green-text {
       color: lime;
     }
-
+  
     .no-bullet {
       list-style-type: none;
     }
-
+  
     /* Terminal style */
     .terminal {
       overflow: hidden;
@@ -102,7 +108,7 @@
       padding: 10px;
       margin-top: 20px;
     }
-
+  
     .terminal:before {
       content: '$';
       color: lime;
@@ -110,12 +116,12 @@
       float: left;
       margin-right: 10px;
     }
-
+  
     .terminal-input {
       display: inline;
       color: #0F0;
     }
-
+  
     .terminal-output {
       color: #0F0;
     }
