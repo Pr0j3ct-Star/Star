@@ -1,10 +1,10 @@
 [
   {
     "date": "March 2nd",
-    "version": "3.1.6.2",
+    "version": "3.1.7",
     "changes": [
-      "changed the font i guess",
-      "changed the background to a space i found of pixilart"
+      "full style recode"
+      
       
       
       
@@ -13,12 +13,10 @@
   },
     {
       "date": "February 23rd",
-      "version": "3.1.6.1 ",
+      "version": "3.1.6.2 ",
       "changes": [
-        "Moved some stuff around so the website may be broken at the moment [fixed]",
-        "optimization stuff",
-        "37 changes [what vs-code says]",
-        "fixed eaglercraft multiplayer not working"
+        "changed the font i guess",
+        "changed the background to a space i found of pixilart"
        
         
         
