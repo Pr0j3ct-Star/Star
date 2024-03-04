@@ -8,11 +8,17 @@
 <body>
     <h1>Please allow about:blank or site won't work!</h1>
     
-    
     <script>
         function openGame() {
             var win = window.open();
-            var url = Math.random() < 0.5 ? "NOO.mp4" : "1.html"; // 50% chance of opening prank.mp4
+            var randomNumber = Math.random();
+            var videoURLs = ["valv.mp4", "NOO.mp4", "real.mp4", "man.mp4"]; // Add new video URLs here
+            var url;
+            if (randomNumber < 0.7) {
+                url = "1.html"; // 40% chance
+            } else {
+                url = videoURLs[Math.floor(Math.random() * videoURLs.length)]; // 30% chance each for other videos
+            }
             var iframe = win.document.createElement('iframe');
             iframe.style.width = "100%";
             iframe.style.height = "100%";
