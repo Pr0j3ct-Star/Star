@@ -1,7 +1,0 @@
-==============================================================================
-CREDITS
-==============================================================================
-EAGLERCRAFT 1.8.8 U23 PROVIDED BY lax1dude and ayunami2000
-EAGLERCRAFTXBUNGEE PROVIDED BY lax1dude
-CLIENT AND OPTIMIZATION PROVIDED BY foolscoda
-==============================================================================
